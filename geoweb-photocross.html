@@ -1,0 +1,32 @@
+<?php get_template_part('template-parts/header'); ?>
+
+<?php if (function_exists('my_custom_breadcrumb')) {
+	my_custom_breadcrumb();
+} ?>
+
+<?php
+$lang = function_exists('pll_current_language') ? pll_current_language() : 'ja';
+
+switch ($lang) {
+	case 'ja':
+		get_template_part('template-parts/contact/contact', 'ja');
+		break;
+	case 'en':
+		get_template_part('template-parts/contact/contact', 'en');
+		break;
+	case 'zh':
+		get_template_part('template-parts/contact/contact', 'zh');
+		break;
+	case 'vi':
+		get_template_part('template-parts/contact/contact', 'vi');
+		break;
+	case 'th':
+		get_template_part('template-parts/contact/contact', 'th');
+		break;
+	default:
+		get_template_part('template-parts/contact/contact', 'ja');
+		break;
+}
+?>
+
+<?php get_template_part('template-parts/footer'); ?>
