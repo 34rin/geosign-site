@@ -1,32 +1,324 @@
-<?php get_template_part('template-parts/header'); ?>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- 文字コード -->
+    <meta charset="UTF-8" />
+    <!-- ビューポート設定・ピンチイン -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 基本SEO -->
+    <title>受託開発｜ジオサイン株式会社</title>
+    <meta
+      name="description"
+      content="ジオサイン株式会社は、地盤調査・施工システムを中心に、現場の効率化とデータ連携を支援するソリューションを提供しています。"
+    />
+    <meta
+      name="keywords"
+      content="地盤調査, 地盤改良, GeoWeb, 施工, ジオカルテ"
+    />
+    <!-- Google Fonts／Font Awesome Kitの読み込み -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4ff44a9951.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- 電話番号自動認識オフ -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style/style.css" />
+  </head>
+  <body>
+    <header class="all-header">
+      <div class="all-header-logo">
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="ジオサイン GeoSign" />
+        </a>
+      </div>
+      <!-- ハンバーガーメニュー -->
+      <div class="hamburger-menu" id="hamburgermenu">
+        <div class="ham-menu-inner">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <nav class="hamburger-menu-nav" id="hamburgermenunav">
+        <ul class="ham-nav">
+          <li class="pull-down-menu">
+            <span class="menu-parent">
+              製品紹介 <i class="fa-solid fa-chevron-down"></i>
+            </span>
+            <ul class="sub-menu">
+              <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
+              <li><a href="g-report.html">G-Report</a></li>
+              <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="development.html">受託開発</a>
+          </li>
+          <li>
+            <a href="faq.html">FAQ</a>
+          </li>
+          <li>
+            <div class="btn ham-nav-btn">
+              <a href="trial.html"><span>トライアル申込はこちら</span></a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <nav class="all-header-nav">
+        <ul class="header-nav">
+          <li class="pull-down-menu">
+            <span class="menu-parent">
+              製品紹介 <i class="fa-solid fa-chevron-down"></i>
+            </span>
+            <ul class="sub-menu sub-menu-absolute">
+              <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
+              <li><a href="g-report.html">G-Report</a></li>
+              <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="development.html">受託開発</a>
+          </li>
+          <li>
+            <a href="faq.html">FAQ</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-nav-btn">
+        <div class="btn">
+          <a href="trial.html"><span>トライアル申込</span></a>
+        </div>
+      </div>
+    </header>
 
-<?php if (function_exists('my_custom_breadcrumb')) {
-	my_custom_breadcrumb();
-} ?>
+    <main>
+      <div class="development-main-visual">
+        <div class="dmv-title">
+          <h1>ジオサインがDX化をサポート</h1>
+          <p>
+            地盤調査・地盤改良の現場に精通した私たちだからこそ実現できる、業務フローに即したシステム提案とスピーディな開発対応。現場の声を反映し、業務の効率化・属人化の解消・報告業務の一元化など、実務に直結した価値を提供します。
+          </p>
+        </div>
+        <img
+          class="dmv-sp"
+          src="assets/images/development-main-visual-sp.jpg"
+          alt="受託開発メインビジュアル"
+        />
+        <img
+          class="dmv-pc"
+          src="assets/images/development-main-visual-pc.jpg"
+          alt="受託開発メインビジュアル"
+        />
+      </div>
 
-<?php
-$lang = function_exists('pll_current_language') ? pll_current_language() : 'ja';
+      <div class="development-feature">
+        <h2 class="development-h2">Feature</h2>
+        <div class="df-content">
+          <p class="dfc-title">ジオサインの開発で出来ること</p>
+          <p class="dfc-text">
+            地盤調査・地盤改良の業務に知見を持っているジオサインだからこそ業務効率化にむけたシステム提案が可能です。またスピード感をもって対応を進めます。
+          </p>
+          <div class="dfc-flex">
+            <img
+              src="assets/images/development-feature-1.jpg"
+              alt="ジオサインの開発で出来ること"
+            />
+            <p class="dfcf-text">
+              <span
+                >『既存システムのリプレイスを検討中』<br />『システム構築したベンダーの応答が遅く、不具合や機能追加が進まない』<br />『新しい業務システムを構築して効率化を図りたい』<br />『問題意識はあるが、何から進めて良いかわからない』</span
+              >
+              <span
+                >など様々な状況はありますが、まずはお気軽にご連絡ください。より良い方法を一緒に考えさせていただきます。</span
+              >
+            </p>
+          </div>
+        </div>
+        <div class="df-content">
+          <p class="dfc-title">GeoWebを活かしたシステム開発</p>
+          <div class="dfc-flex">
+            <img
+              src="assets/images/development-feature-2.jpg"
+              alt="GeoWebを活かしたシステム開発"
+            />
+            <p class="dfcf-text">
+              弊社では地盤業界に向けてGeoWebSystemを提供しています。スマートフォンアプリから送信したデータ（調査データ、写真、チェックリスト等）がGeoWebサーバーへ連携し、連携データを外部システムへ連携することが可能です。自社独自の報告書システムや、業務管理システムに連携し情報を集約させ一元管理を実現できます。
+            </p>
+          </div>
+        </div>
+        <div class="df-content">
+          <p class="dfc-title">G-Reportへの機能追加</p>
+          <p class="dfc-text">
+            G-Reportとは地盤調査の報告書を所定の様式で出力することが可能なシステムです。現在利用中のお客様から、機能追加の要望をいただき個別でカスタマイズ開発を進めた実績がございます。
+          </p>
+          <div class="dfc-flex">
+            <img
+              src="assets/images/development-feature-3.jpg"
+              alt="G-Reportへの機能追加"
+            />
+            <p class="dfcf-text">
+              G-Reportとは地盤調査の報告書を所定の様式で出力することが可能なシステムです。現在利用中のお客様から、機能追加の要望をいただき個別でカスタマイズ開発を進めた実績がございます。
+            </p>
+          </div>
+        </div>
+      </div>
 
-switch ($lang) {
-	case 'ja':
-		get_template_part('template-parts/mission/mission', 'ja');
-		break;
-	case 'en':
-		get_template_part('template-parts/mission/mission', 'en');
-		break;
-	case 'zh':
-		get_template_part('template-parts/mission/mission', 'zh');
-		break;
-	case 'vi':
-		get_template_part('template-parts/mission/mission', 'vi');
-		break;
-	case 'th':
-		get_template_part('template-parts/mission/mission', 'th');
-		break;
-	default:
-		get_template_part('template-parts/mission/mission', 'ja');
-		break;
-}
-?>
+      <div class="development-process">
+        <h2 class="development-h2 development-process-h2">
+          Process<span>システム開発の工程</span>
+        </h2>
+        <div class="development-process-flex-1">
+          <div class="process">
+            <div class="process-number">
+              <p class="process-step">STEP</p>
+              <p class="process-num">01</p>
+            </div>
+            <div class="process-content">
+              <p class="process-title">ヒアリング</p>
+              <p class="process-text">
+                現状で抱えている問題や、どうしていきたいかをヒアリングします。
+              </p>
+            </div>
+          </div>
+          <div class="process">
+            <div class="process-number">
+              <p class="process-step">STEP</p>
+              <p class="process-num">02</p>
+            </div>
+            <div class="process-content">
+              <p class="process-title">ご提案</p>
+              <p class="process-text">
+                いただいた内容をもとに対応可能な内容と方向性をご提案します。方向性の認識が一致しましたら、概算お見積りを算出いたします。
+              </p>
+            </div>
+          </div>
+          <div class="process">
+            <div class="process-number">
+              <p class="process-step">STEP</p>
+              <p class="process-num">03</p>
+            </div>
+            <div class="process-content">
+              <p class="process-title">要件定義・見積</p>
+              <p class="process-text">
+                画面・機能の詳細は打合せで決定し、必要に応じて業務フローを確認します。要件定義後、正式なお見積りを作成いたします。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="development-process-flex-2">
+          <div class="process">
+            <div class="process-number">
+              <p class="process-step">STEP</p>
+              <p class="process-num">04</p>
+            </div>
+            <div class="process-content">
+              <p class="process-title">製造</p>
+              <p class="process-text">
+                発注をいただきましたら製造（プログラミング）を開始します。
+              </p>
+            </div>
+          </div>
+          <div class="process">
+            <div class="process-number">
+              <p class="process-step">STEP</p>
+              <p class="process-num">05</p>
+            </div>
+            <div class="process-content">
+              <p class="process-title">テスト・納品</p>
+              <p class="process-text">
+                製造後に要件・動作を確認し、テスト完了後に本番環境へリリース・納品します。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="btn development-process-btn">
+          <a href="trial.html"><span>無料相談受付中</span></a>
+        </div>
+      </div>
+    </main>
 
-<?php get_template_part('template-parts/footer'); ?>
+    <footer class="all-footer">
+      <div class="af-price-demo">
+        <div class="afpd-content">
+          <div class="afpd-title">
+            <p class="afpd-text-1">デモ期間中は</p>
+            <div>
+              <p class="afpd-text-2">アプリ料金/サーバー料金</p>
+            </div>
+            <p class="afpd-text-3">全て<span>０円</span></p>
+          </div>
+          <p class="afpd-text-4">無料デモ 実施中</p>
+          <div>
+            <div class="btn afpd-btn">
+              <a href="trial.html"><span>無料デモはこちら</span></a>
+            </div>
+          </div>
+          <p class="afpd-text-5">※無料デモは最長1か月</p>
+        </div>
+      </div>
+      <div class="af-info">
+        <div class="afi-logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="ジオサイン GeoSign" />
+          </a>
+        </div>
+        <nav class="afi-sitemap">
+          <ul class="afi-nav">
+            <li class="pull-down-menu">
+              <span class="menu-parent">
+                製品紹介 <i class="fa-solid fa-chevron-down"></i>
+              </span>
+              <ul class="sub-menu">
+                <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
+                <li><a href="g-report.html">G-Report</a></li>
+                <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="development.html">受託開発</a>
+            </li>
+            <li>
+              <a href="faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="trial.html">トライアル申込</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="afi-address-flex">
+          <div class="afi-address">
+            <p class="afi-address-title">本社</p>
+            <p class="afi-address-text">〒 101-0025</p>
+            <p class="afi-address-text">東京都千代田区神田佐久間町2-7</p>
+            <p class="afi-address-text">TEL 03-5823-4931</p>
+            <p class="afi-address-text">FAX 03-5823-4930</p>
+          </div>
+          <div class="afi-address">
+            <p class="afi-address-title">レンタルセンター</p>
+            <p class="afi-address-text">〒 270-0163</p>
+            <p class="afi-address-text">千葉県流山市南流山3-7-4</p>
+            <p class="afi-address-text">TEL 04-7170-0423</p>
+            <p class="afi-address-text">FAX 04-7170-0424</p>
+          </div>
+        </div>
+        <div class="afi-business-hours">
+          <p class="afi-bh-title">営業時間</p>
+          <p class="afi-bh-text">平日 9:00-18:00（土日祝休み）</p>
+        </div>
+        <div class="afi-background">
+          <div class="btn afi-btn">
+            <a href="trial.html"><span>トライアル申込はこちら</span></a>
+          </div>
+          <div class="copyright">
+            <small>© 2025 GeoSign Ltd. All rights resarved.</small>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
