@@ -1,32 +1,371 @@
-<?php get_template_part('template-parts/header'); ?>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- 文字コード -->
+    <meta charset="UTF-8" />
+    <!-- ビューポート設定・ピンチイン -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 基本SEO -->
+    <title>商品｜ジオサイン株式会社</title>
+    <meta
+      name="description"
+      content="ジオサイン株式会社は、地盤調査・施工システムを中心に、現場の効率化とデータ連携を支援するソリューションを提供しています。"
+    />
+    <meta
+      name="keywords"
+      content="地盤調査, 地盤改良, GeoWeb, 施工, ジオカルテ"
+    />
+    <!-- Google Fonts／Font Awesome Kitの読み込み -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4ff44a9951.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- 電話番号自動認識オフ -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style/style.css" />
+  </head>
+  <body>
+    <header class="all-header">
+      <div class="all-header-logo">
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="ジオサイン GeoSign" />
+        </a>
+      </div>
+      <!-- ハンバーガーメニュー -->
+      <div class="hamburger-menu" id="hamburgermenu">
+        <div class="ham-menu-inner">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <nav class="hamburger-menu-nav" id="hamburgermenunav">
+        <ul class="ham-nav">
+          <li class="pull-down-menu">
+            <span class="menu-parent">
+              製品紹介 <i class="fa-solid fa-chevron-down"></i>
+            </span>
+            <ul class="sub-menu">
+              <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
+              <li><a href="g-report.html">G-Report</a></li>
+              <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="development.html">受託開発</a>
+          </li>
+          <li>
+            <a href="faq.html">FAQ</a>
+          </li>
+          <li>
+            <div class="btn ham-nav-btn">
+              <a href="trial.html"><span>トライアル申込はこちら</span></a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <nav class="all-header-nav">
+        <ul class="header-nav">
+          <li class="pull-down-menu">
+            <span class="menu-parent">
+              製品紹介 <i class="fa-solid fa-chevron-down"></i>
+            </span>
+            <ul class="sub-menu sub-menu-absolute">
+              <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
+              <li><a href="g-report.html">G-Report</a></li>
+              <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="development.html">受託開発</a>
+          </li>
+          <li>
+            <a href="faq.html">FAQ</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-nav-btn">
+        <div class="btn">
+          <a href="trial.html"><span>トライアル申込</span></a>
+        </div>
+      </div>
+    </header>
 
-<?php if (function_exists('my_custom_breadcrumb')) {
-	my_custom_breadcrumb();
-} ?>
+    <main>
+      <div class="product-main-visual">
+        <div class="pmv-title">
+          <img src="assets/images/photo-icon.png" alt="カメラアイコン" />
+          <h1>GeoWebPhoto/Cross</h1>
+        </div>
+        <img
+          class="pmv-sp"
+          src="assets/images/product-main-visual-sp-2.jpg"
+          alt="GeoWebPhoto/Crossメインビジュアル"
+        />
+        <img
+          class="pmv-pc"
+          src="assets/images/product-main-visual-pc-2.jpg"
+          alt="GeoWebPhoto/Crossメインビジュアル"
+        />
+      </div>
 
-<?php
-$lang = function_exists('pll_current_language') ? pll_current_language() : 'ja';
+      <div class="product-about">
+        <div class="product-about-title">
+          <h2 class="product-about-h2">
+            <p>現場写真と断面図を、スマートに管理。</p>
+          </h2>
+          <p class="pat-text">
+            写真管理から断面図作成まで。GeoWebPhoto/Crossで、現場データを効率的に整理。
+          </p>
+        </div>
+        <div class="product-about-explanation">
+          <p class="pae-title">GeoWebPhoto/Crossとは</p>
+          <p class="pae-text">
+            従来の黒板付き施工写真に比べ、撮影・管理・台帳作成をスピーディーかつ簡単に行えるのが「GeoWebPhoto」電子黒板機能で報告書の品質も向上します。さらに「GeoWebCross」を併用すれば、現場から施工データを送信でき、報告書作成を大幅に効率化。大手ハウスメーカーでも高く評価されています。
+          </p>
+        </div>
+      </div>
 
-switch ($lang) {
-	case 'ja':
-		get_template_part('template-parts/contact/contact', 'ja');
-		break;
-	case 'en':
-		get_template_part('template-parts/contact/contact', 'en');
-		break;
-	case 'zh':
-		get_template_part('template-parts/contact/contact', 'zh');
-		break;
-	case 'vi':
-		get_template_part('template-parts/contact/contact', 'vi');
-		break;
-	case 'th':
-		get_template_part('template-parts/contact/contact', 'th');
-		break;
-	default:
-		get_template_part('template-parts/contact/contact', 'ja');
-		break;
-}
-?>
+      <div class="product-feature">
+        <h2 class="product-h2">Feature<span>GeoWebPhoto/Crossの特長</span></h2>
+        <div>
+          <p class="product-feature-phcr">GeoWebPhoto</p>
+          <div class="product-feature-flex">
+            <div class="feature feature-phcr">
+              <div class="feature-title">
+                <p class="ft-num">01</p>
+                <p class="ft-text">写真台帳が約30秒で作成できる</p>
+              </div>
+              <p class="feature-text">
+                現場ではスマホで撮影するだけ。撮影後はボタン一つで、約30秒で写真台帳が完成します。
+              </p>
+            </div>
+            <div class="feature feature-phcr">
+              <div class="feature-title">
+                <p class="ft-num">02</p>
+                <p class="ft-text">
+                  黒板の記入ミス、反射による見えづらさが解消
+                </p>
+              </div>
+              <p class="feature-text">
+                従来の手書き黒板では記入ミスや撮り直しが発生しやすいですが、GeoWeb
+                Photoの電子黒板機能なら撮影後の修正が可能で光の反射も補正され、作業効率が向上します。
+              </p>
+            </div>
+            <div class="feature feature-phcr">
+              <div class="feature-title">
+                <p class="ft-num">03</p>
+                <p class="ft-text">報告書作成業務が1件あたり56分短縮可能</p>
+              </div>
+              <p class="feature-text">
+                GeoWebPhotoなら撮影と同時に画像をサーバーへアップロード。オフィスの内勤者は現場作業員を待たずに報告書作成を開始でき、作業時間を最大56分短縮できます。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="product-feature-phcr">GeoWebCross</p>
+          <div class="product-feature-flex">
+            <div class="feature feature-phcr">
+              <div class="feature-title">
+                <p class="ft-num">01</p>
+                <p class="ft-text">FlashAirで施工データを送信</p>
+              </div>
+              <p class="feature-text">
+                どの施工機からでもFlashAirで施工データを送信可能。USBメモリの紛失や破損も防げます。※一部機種では送信できない場合があります。
+              </p>
+            </div>
+            <div class="feature feature-phcr">
+              <div class="feature-title">
+                <p class="ft-num">02</p>
+                <p class="ft-text">どこでも施工データを見られる</p>
+              </div>
+              <p class="feature-text">
+                送信された施工データはExcelでどこでも確認可能。最終深度のトルクや杭の打設サイクルも施工前にチェックできます。
+              </p>
+            </div>
+            <div class="feature feature-phcr">
+              <div class="feature-title">
+                <p class="ft-num">03</p>
+                <p class="ft-text">施工データ統一フォーマット</p>
+              </div>
+              <p class="feature-text">
+                どの施工機のデータも同じフォーマットで出力可能。他システムとの連携もスムーズです。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="btn product-feature-btn pfpc-btn">
+          <a href="trial.html"><span>トライアル申込はこちら</span></a>
+        </div>
+      </div>
 
-<?php get_template_part('template-parts/footer'); ?>
+      <div class="product-function">
+        <h2 class="product-h2">Function<span>GeoWebPhoto/Crossの機能</span></h2>
+        <div class="function">
+          <p class="function-title">写真撮影機能（GeoWebPhoto）</p>
+          <div class="product-function-flex">
+            <div class="function-img">
+              <img src="assets/images/function-4.png" alt="写真撮影機能" />
+            </div>
+            <p class="function-text">
+              事前設定により現場ごとの撮り忘れを防止。撮影順にフレーム化され、写真台帳作成も大幅に短縮できます。杭ごとの打設サイクルや材料搬入などはグループ撮影でまとめて撮影可能で、直感的に操作できます。
+            </p>
+          </div>
+        </div>
+        <div class="function">
+          <p class="function-title">電子黒板機能（GeoWebPhoto）</p>
+          <div class="product-function-flex">
+            <div class="function-img function-photo-img">
+              <img src="assets/images/function-7.png" alt="電子黒板機能1" />
+              <img src="assets/images/function-8.png" alt="電子黒板機能2" />
+            </div>
+            <p class="function-text">
+              物件や撮影フレームごとに電子黒板を設定可能。手書きでは見づらかった内容も確認しやすく写真整理が簡単になります。現場で数値や状況に応じた入力が必要な部分は、部分入力機能で扱いやすくなります。
+            </p>
+          </div>
+        </div>
+        <div class="function">
+          <p class="function-title">アップロード機能（GeoWebPhoto）</p>
+          <div class="product-function-flex">
+            <div class="function-img">
+              <img src="assets/images/function-5.png" alt="アップロード機能" />
+            </div>
+            <p class="function-text">
+              GeoWebCross非対応機種の施工データも、有線またはFlash
+              Air経由で取得し、現場写真と一緒に送信可能です。トラブル時は動画撮影で現場状況を共有できます。※通信量には注意が必要です。
+            </p>
+          </div>
+        </div>
+        <div class="function">
+          <p class="function-title">施工データ取込機能（GeoWebCross）</p>
+          <div class="product-function-flex">
+            <div class="function-img">
+              <img
+                src="assets/images/function-6.png"
+                alt="施工データ取込機能"
+              />
+            </div>
+            <p class="function-text">
+              上図の施工管理装置リストの装置からGeoWeb
+              Crossで施工データを取り込み可能。データ変換ソフト不要で統一フォーマットの施工記録が作成され、GeoWebPhotoと併用すれば現場・事務作業の負担を大幅に削減できます。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-recommendation-terminal">
+        <div class="product-recommendation">
+          <div class="pr-content">
+            <div class="prc-title">
+              <div class="prct-icon">
+                <img src="assets/images/phone-icon.png" alt="電話アイコン" />
+              </div>
+              <p class="prct-text">推奨端末</p>
+            </div>
+            <p class="prc-text-1">機種名：DuraForce EX</p>
+            <p class="prc-text-2">推奨Androidバージョン：8～13</p>
+            <div class="prc-text-3">
+              <p>※iOSは非対応です</p>
+              <p>
+                ※その他端末でも動作しますが一部動作しない場合がございます。
+                不安な方はお問合せフォームからご連絡ください。
+              </p>
+            </div>
+            <div class="btn prc-btn">
+              <a
+                href="https://supportbot-admin.userlocal.jp/pages/a18149b8a54802f6c8a20e1a5835d285/form"
+                ><span>お問い合わせ</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="all-footer">
+      <div class="af-price-demo">
+        <div class="afpd-content">
+          <div class="afpd-title">
+            <p class="afpd-text-1">デモ期間中は</p>
+            <div>
+              <p class="afpd-text-2">アプリ料金/サーバー料金</p>
+            </div>
+            <p class="afpd-text-3">全て<span>０円</span></p>
+          </div>
+          <p class="afpd-text-4">無料デモ 実施中</p>
+          <div>
+            <div class="btn afpd-btn">
+              <a href="trial.html"><span>無料デモはこちら</span></a>
+            </div>
+          </div>
+          <p class="afpd-text-5">※無料デモは最長1か月</p>
+        </div>
+      </div>
+      <div class="af-info">
+        <div class="afi-logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="ジオサイン GeoSign" />
+          </a>
+        </div>
+        <nav class="afi-sitemap">
+          <ul class="afi-nav">
+            <li class="pull-down-menu">
+              <span class="menu-parent">
+                製品紹介 <i class="fa-solid fa-chevron-down"></i>
+              </span>
+              <ul class="sub-menu">
+                <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
+                <li><a href="g-report.html">G-Report</a></li>
+                <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="development.html">受託開発</a>
+            </li>
+            <li>
+              <a href="faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="trial.html">トライアル申込</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="afi-address-flex">
+          <div class="afi-address">
+            <p class="afi-address-title">本社</p>
+            <p class="afi-address-text">〒 101-0025</p>
+            <p class="afi-address-text">東京都千代田区神田佐久間町2-7</p>
+            <p class="afi-address-text">TEL 03-5823-4931</p>
+            <p class="afi-address-text">FAX 03-5823-4930</p>
+          </div>
+          <div class="afi-address">
+            <p class="afi-address-title">レンタルセンター</p>
+            <p class="afi-address-text">〒 270-0163</p>
+            <p class="afi-address-text">千葉県流山市南流山3-7-4</p>
+            <p class="afi-address-text">TEL 04-7170-0423</p>
+            <p class="afi-address-text">FAX 04-7170-0424</p>
+          </div>
+        </div>
+        <div class="afi-business-hours">
+          <p class="afi-bh-title">営業時間</p>
+          <p class="afi-bh-text">平日 9:00-18:00（土日祝休み）</p>
+        </div>
+        <div class="afi-background">
+          <div class="btn afi-btn">
+            <a href="trial.html"><span>トライアル申込はこちら</span></a>
+          </div>
+          <div class="copyright">
+            <small>© 2025 GeoSign Ltd. All rights resarved.</small>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

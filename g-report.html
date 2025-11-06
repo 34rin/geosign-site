@@ -1,32 +1,316 @@
-<?php get_template_part('template-parts/header'); ?>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- 文字コード -->
+    <meta charset="UTF-8" />
+    <!-- ビューポート設定・ピンチイン -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 基本SEO -->
+    <title>商品｜ジオサイン株式会社</title>
+    <meta
+      name="description"
+      content="ジオサイン株式会社は、地盤調査・施工システムを中心に、現場の効率化とデータ連携を支援するソリューションを提供しています。"
+    />
+    <meta
+      name="keywords"
+      content="地盤調査, 地盤改良, GeoWeb, 施工, ジオカルテ"
+    />
+    <!-- Google Fonts／Font Awesome Kitの読み込み -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4ff44a9951.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- 電話番号自動認識オフ -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style/style.css" />
+  </head>
+  <body>
+    <header class="all-header">
+      <div class="all-header-logo">
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="ジオサイン GeoSign" />
+        </a>
+      </div>
+      <!-- ハンバーガーメニュー -->
+      <div class="hamburger-menu" id="hamburgermenu">
+        <div class="ham-menu-inner">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <nav class="hamburger-menu-nav" id="hamburgermenunav">
+        <ul class="ham-nav">
+          <li class="pull-down-menu">
+            <span class="menu-parent">
+              製品紹介 <i class="fa-solid fa-chevron-down"></i>
+            </span>
+            <ul class="sub-menu">
+              <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
+              <li><a href="g-report.html">G-Report</a></li>
+              <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="development.html">受託開発</a>
+          </li>
+          <li>
+            <a href="faq.html">FAQ</a>
+          </li>
+          <li>
+            <div class="btn ham-nav-btn">
+              <a href="trial.html"><span>トライアル申込はこちら</span></a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <nav class="all-header-nav">
+        <ul class="header-nav">
+          <li class="pull-down-menu">
+            <span class="menu-parent">
+              製品紹介 <i class="fa-solid fa-chevron-down"></i>
+            </span>
+            <ul class="sub-menu sub-menu-absolute">
+              <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
+              <li><a href="g-report.html">G-Report</a></li>
+              <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="development.html">受託開発</a>
+          </li>
+          <li>
+            <a href="faq.html">FAQ</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-nav-btn">
+        <div class="btn">
+          <a href="trial.html"><span>トライアル申込</span></a>
+        </div>
+      </div>
+    </header>
 
-<?php if (function_exists('my_custom_breadcrumb')) {
-	my_custom_breadcrumb();
-} ?>
+    <main>
+      <div class="product-main-visual">
+        <div class="pmv-title">
+          <img src="assets/images/report-icon.png" alt="レポートアイコン" />
+          <h1>G-Report</h1>
+        </div>
+        <img
+          class="pmv-sp pmv-report"
+          src="assets/images/product-main-visual-sp-3.jpg"
+          alt="G-Reportメインビジュアル"
+        />
+        <img
+          class="pmv-pc pmv-report"
+          src="assets/images/product-main-visual-pc-3.jpg"
+          alt="G-Reportメインビジュアル"
+        />
+      </div>
 
-<?php
-$lang = function_exists('pll_current_language') ? pll_current_language() : 'ja';
+      <div class="product-about">
+        <div class="product-about-title">
+          <h2 class="product-about-h2">
+            <p>地盤調査報告書を、もっとスマートに。</p>
+          </h2>
+          <p class="pat-text">
+            プロフェッショナルな報告書を効率的に。G-Reportで、レポート作成の時間を大幅に削減。
+          </p>
+        </div>
+      </div>
 
-switch ($lang) {
-	case 'ja':
-		get_template_part('template-parts/mission/mission', 'ja');
-		break;
-	case 'en':
-		get_template_part('template-parts/mission/mission', 'en');
-		break;
-	case 'zh':
-		get_template_part('template-parts/mission/mission', 'zh');
-		break;
-	case 'vi':
-		get_template_part('template-parts/mission/mission', 'vi');
-		break;
-	case 'th':
-		get_template_part('template-parts/mission/mission', 'th');
-		break;
-	default:
-		get_template_part('template-parts/mission/mission', 'ja');
-		break;
-}
-?>
+      <div class="product-feature">
+        <h2 class="product-h2">Feature<span>G-Reportの特長</span></h2>
+        <div class="product-feature-flex">
+          <div class="feature feature-report">
+            <div class="feature-title">
+              <p class="ft-num">01</p>
+              <p class="ft-text">データ連携</p>
+            </div>
+            <p class="feature-text">
+              現地でGeoWebアプリからデータを送信すれば、G-Reportとリアルタイム連携。内勤者も即座に閲覧でき、報告書作成を早められます。
+            </p>
+          </div>
+          <div class="feature feature-report">
+            <div class="feature-title">
+              <p class="ft-num">02</p>
+              <p class="ft-text">報告書作成の時短</p>
+            </div>
+            <p class="feature-text">
+              GeoWebと連携すれば、入力が必要な項目の多くが自動で埋まり、測点データやチェックリスト転記、写真アップロードの手間も省け、報告書作成時間を短縮できます。
+            </p>
+          </div>
+        </div>
+        <div class="product-feature-flex">
+          <div class="feature feature-report">
+            <div class="feature-title">
+              <p class="ft-num">03</p>
+              <p class="ft-text">追加機能</p>
+            </div>
+            <p class="feature-text">
+              要望の多い機能は随時追加します。「法改正に伴う項目追加」や「より使いやすくなる改善案」など、イメージでも構いませんのでお知らせください。
+            </p>
+          </div>
+          <div class="feature feature-report">
+            <div class="feature-title">
+              <p class="ft-num">04</p>
+              <p class="ft-text">各社用のカスタマイズ実績</p>
+            </div>
+            <p class="feature-text">
+              G-Reportを基に独自システム開発の実績があり、帳票デザイン変更や機能改修にも対応可能です。
+            </p>
+          </div>
+        </div>
+        <div class="btn product-feature-btn">
+          <a href="trial.html"><span>トライアル申込はこちら</span></a>
+        </div>
+      </div>
 
-<?php get_template_part('template-parts/footer'); ?>
+      <div class="product-function product-function-report">
+        <h2 class="product-h2">Function<span>G-Reportの機能</span></h2>
+        <div class="pff-report">
+          <div class="function function-report">
+            <p class="function-title function-title-report">
+              <img
+                src="assets/images/result-icon.png"
+                alt="判定結果アイコン"
+              />簡易液状化判定結果
+            </p>
+            <p class="function-text function-text-report">
+              測点データをもとに非液状化層（H1）、液状化層（H2）を算出し、液状化の危険度を簡易的に計ります。位置情報をもとに液状化危険度をハザードマップから引用することで危険度が一目でわかります。
+            </p>
+          </div>
+          <div class="function function-report">
+            <p class="function-title function-title-report">
+              <img
+                src="assets/images/layer-icon-2.png"
+                alt="地層アイコン"
+              />断面図機能
+            </p>
+            <p class="function-text function-text-report">
+              Wsw（荷重平均・単位kN）とNsw（1mあたりの半回転数の平均値・単位回）を用いて地盤の弱い層・強い層を一覧で確認することができます。複数のポイントを並べることも可能です。
+            </p>
+          </div>
+          <div class="function function-report">
+            <p class="function-title function-title-report">
+              <img
+                src="assets/images/import-icon.png"
+                alt="インポートアイコン"
+              />YBM調査機データの取込
+            </p>
+            <p class="function-text function-text-report">
+              GeoWebでは非対応のYBM調査データも、G-Reportでは取込が可能です。GeoWebから写真とチェックリストを送信、YBM調査データは手動でアップロードする使い方も可能です。
+            </p>
+          </div>
+        </div>
+        <div class="function-img function-report-img">
+          <img
+            class="fri-1"
+            src="assets/images/function-9.png"
+            alt="簡易液状化判定結果"
+          />
+          <img
+            class="fri-2"
+            src="assets/images/function-10.png"
+            alt="断面図機能"
+          />
+        </div>
+      </div>
+
+      <div class="product-sample">
+        <h2 class="product-h2">Sample<span>サンプル帳票</span></h2>
+        <div class="sample-img">
+          <img src="assets/images/sample-1.png" alt="サンプル帳票1" />
+          <img src="assets/images/sample-2.png" alt="サンプル帳票2" />
+          <img src="assets/images/sample-3.png" alt="サンプル帳票3" />
+        </div>
+      </div>
+    </main>
+
+    <footer class="all-footer">
+      <div class="af-price-demo">
+        <div class="afpd-content">
+          <div class="afpd-title">
+            <p class="afpd-text-1">デモ期間中は</p>
+            <div>
+              <p class="afpd-text-2">アプリ料金/サーバー料金</p>
+            </div>
+            <p class="afpd-text-3">全て<span>０円</span></p>
+          </div>
+          <p class="afpd-text-4">無料デモ 実施中</p>
+          <div>
+            <div class="btn afpd-btn">
+              <a href="trial.html"><span>無料デモはこちら</span></a>
+            </div>
+          </div>
+          <p class="afpd-text-5">※無料デモは最長1か月</p>
+        </div>
+      </div>
+      <div class="af-info">
+        <div class="afi-logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="ジオサイン GeoSign" />
+          </a>
+        </div>
+        <nav class="afi-sitemap">
+          <ul class="afi-nav">
+            <li class="pull-down-menu">
+              <span class="menu-parent">
+                製品紹介 <i class="fa-solid fa-chevron-down"></i>
+              </span>
+              <ul class="sub-menu">
+                <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
+                <li><a href="g-report.html">G-Report</a></li>
+                <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="development.html">受託開発</a>
+            </li>
+            <li>
+              <a href="faq.html">FAQ</a>
+            </li>
+            <li>
+              <a href="trial.html">トライアル申込</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="afi-address-flex">
+          <div class="afi-address">
+            <p class="afi-address-title">本社</p>
+            <p class="afi-address-text">〒 101-0025</p>
+            <p class="afi-address-text">東京都千代田区神田佐久間町2-7</p>
+            <p class="afi-address-text">TEL 03-5823-4931</p>
+            <p class="afi-address-text">FAX 03-5823-4930</p>
+          </div>
+          <div class="afi-address">
+            <p class="afi-address-title">レンタルセンター</p>
+            <p class="afi-address-text">〒 270-0163</p>
+            <p class="afi-address-text">千葉県流山市南流山3-7-4</p>
+            <p class="afi-address-text">TEL 04-7170-0423</p>
+            <p class="afi-address-text">FAX 04-7170-0424</p>
+          </div>
+        </div>
+        <div class="afi-business-hours">
+          <p class="afi-bh-title">営業時間</p>
+          <p class="afi-bh-text">平日 9:00-18:00（土日祝休み）</p>
+        </div>
+        <div class="afi-background">
+          <div class="btn afi-btn">
+            <a href="trial.html"><span>トライアル申込はこちら</span></a>
+          </div>
+          <div class="copyright">
+            <small>© 2025 GeoSign Ltd. All rights resarved.</small>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
