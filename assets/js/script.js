@@ -11,13 +11,28 @@ hamburgermenu.addEventListener("click", () => {
 });
 
 /* プルダウンメニュー */
-document.querySelectorAll(".pull-down-menu .menu-parent").forEach((parent) => {
-  parent.addEventListener("click", (e) => {
+document.querySelectorAll(".pull-down-menu").forEach((menu) => {
+  menu.addEventListener("click", (e) => {
     e.stopPropagation();
-    const li = parent.closest(".pull-down-menu");
-    const submenu = li.querySelector(".sub-menu");
 
-    const isOpen = li.classList.toggle("open");
+    const nextLi = menu.nextElementSibling; // 次の<li>を取得
+    const submenu = nextLi?.querySelector(".sub-menu");
+
+    if (!submenu) return; // sub-menuが存在しなければ何もしない
+
+    const isOpen = menu.classList.toggle("open");
+    submenu.style.display = isOpen ? "inline-block" : "none";
+  });
+});
+
+document.querySelectorAll(".afi-nav-pdm > span").forEach((menu) => {
+  menu.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const submenu = menu.parentElement.querySelector(".afi-nav-sm"); // 同じ<li>内の<ul>を取得
+    if (!submenu) return;
+
+    const isOpen = menu.classList.toggle("open"); //spanにopen付ける
     submenu.style.display = isOpen ? "inline-block" : "none";
   });
 });

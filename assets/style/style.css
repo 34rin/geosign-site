@@ -359,19 +359,20 @@ h2 {
 
 .ham-nav > li {
   width: 100%;
-  padding: 20px;
   font-size: 18px;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   text-align: center;
 }
-.ham-nav > li a,
-.ham-nav > li span {
-  display: inline-block;
-  /*
-     &:hover {
-       color: rgba(255, 255, 255, 0.8);
-     }
-    */
+
+.ham-nav > li > a {
+  padding: 20px;
+}
+
+.ham-nav > .pull-down-menu-sub {
+  border: none;
+}
+.ham-nav > .pull-down-menu-sub .sub-menu {
+  margin: -5px 0 20px;
 }
 
 /* トップページ */
@@ -741,26 +742,25 @@ td {
   }
 }
 
-.afi-nav > li {
-  padding: 15px;
+.afi-nav {
   font-size: clamp(
     14px,
     14px + (24 - 14) * (100vw - 300px) / (1440 - 300),
     24px
   );
 }
-@media (min-width: 768px) {
-  .afi-nav > li {
-    padding: 0;
-  }
-}
-.afi-nav > li a,
-.afi-nav > li span {
+
+.afi-nav > li > a {
+  margin: 15px 0;
   display: inline-block;
 }
-.afi-nav > li a:hover,
-.afi-nav > li span:hover {
+.afi-nav > li > a:hover {
   color: rgba(255, 255, 255, 0.8);
+}
+@media (min-width: 768px) {
+  .afi-nav > li > a {
+    margin: 0;
+  }
 }
 
 .afi-address-title,
@@ -1299,7 +1299,7 @@ td {
   display: inline-block;
   background: linear-gradient(135deg, #00fff2, #32beb7);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
-  transition: all 0.4s ease;
+  transition: all 0.4s;
   border-radius: 50px;
 }
 .btn:hover {
@@ -1323,6 +1323,10 @@ td {
 .btn span {
   display: block;
   padding: 15px 20px;
+}
+
+.ham-nav-btn {
+  margin-top: 20px;
 }
 
 .header-nav-btn {
@@ -1530,16 +1534,14 @@ td {
   background: linear-gradient(#1a75b2, #004b64);
   visibility: hidden;
   transition: opacity 0.4s ease, visibility 0.4s ease;
+  /* 開いたとき */
 }
-
-.ham-nav {
+.hamburger-menu-nav .ham-nav {
   display: flex;
   margin-top: 100px;
   align-items: center;
   flex-direction: column;
 }
-
-/* 開いたとき */
 .hamburger-menu-nav.active {
   opacity: 1;
   visibility: visible;
@@ -1595,33 +1597,68 @@ td {
 .pull-down-menu {
   color: #ffffff;
   cursor: pointer;
-  display: inline-block;
-  position: relative;
+  /* 開いた時に矢印を回転 */
 }
-.pull-down-menu .menu-parent {
-  display: block;
+.pull-down-menu i {
+  transition: transform 0.3s;
 }
-.pull-down-menu .menu-parent i {
-  transition: transform 0.3s ease;
-}
-
-/* 開いた時に矢印を回転 */
 .pull-down-menu.open i {
   transform: rotate(180deg);
 }
 
-.sub-menu {
+.pdm-ham {
+  padding: 20px 0;
+}
+
+.pdm-header-nav {
+  padding: 20px 15px;
+}
+.pdm-header-nav:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.afi-nav-pdm {
+  cursor: pointer;
+  margin: 15px 0;
+}
+@media (min-width: 768px) {
+  .afi-nav-pdm {
+    margin: 0;
+  }
+}
+.afi-nav-pdm span {
+  display: block;
+  /* 開いた時に矢印を回転 */
+}
+.afi-nav-pdm span:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+.afi-nav-pdm span i {
+  transition: transform 0.3s;
+}
+.afi-nav-pdm span.open i {
+  transform: rotate(180deg);
+}
+
+.sub-menu,
+.afi-nav-sm {
   display: none;
   background: #3f7283;
-  margin-top: 15px;
 }
-.sub-menu li a {
+.sub-menu li a,
+.afi-nav-sm li a {
   display: block;
   padding: 10px;
 }
-.sub-menu li a:hover {
+.sub-menu li a:hover,
+.afi-nav-sm li a:hover {
   color: rgba(255, 255, 255, 0.8);
   background: rgba(0, 75, 100, 0.5);
+}
+
+.afi-nav-sm {
+  margin-top: 15px;
 }
 
 .sub-menu-absolute {
@@ -1856,6 +1893,7 @@ td {
     margin: 0 5vw;
     display: block;
     padding: 5px;
+    position: relative;
     background: rgba(255, 255, 255, 0.3);
     box-shadow: 0px 4px 10px rgba(162, 183, 190, 0.3);
     border-radius: 50px;
@@ -1869,22 +1907,18 @@ td {
   }
 }
 
-.header-nav > li > a,
-.header-nav > li > span {
+.header-nav > li > a {
   padding: 20px 15px;
 }
-.header-nav > li > a:hover,
-.header-nav > li > span:hover {
+.header-nav > li > a:hover {
   color: rgba(255, 255, 255, 0.8);
   background: rgba(255, 255, 255, 0.15);
 }
-.header-nav > li:first-child > a,
-.header-nav > li:first-child > span {
+.header-nav > li:first-child {
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
 }
-.header-nav > li:last-child > a,
-.header-nav > li:last-child > span {
+.header-nav > li:last-child > a {
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
 }
