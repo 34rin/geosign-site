@@ -1808,6 +1808,9 @@ td {
   background: #ffffff;
   border-radius: 50px;
 }
+.all-header-logo a:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
 @media (min-width: 768px) {
   .all-header-logo a {
     padding: 5px 15px;
