@@ -966,7 +966,13 @@ td {
 
 .process-title {
   color: rgba(0, 75, 100, 0.5);
+  text-indent: -3em;
   font-size: clamp(20px, 20px + (24 - 20) * (100vw - 300px) / (1440 - 300), 24px);
+}
+@media (min-width: 768px) {
+  .process-title {
+    text-indent: 0;
+  }
 }
 
 .process-text {
