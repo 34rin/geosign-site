@@ -726,7 +726,7 @@ td {
   color: #a9a9a9;
   display: block;
   margin-top: 10px;
-  font-size: clamp(18px, 18px + (48 - 18) * (100vw - 300px) / (1440 - 300), 48px);
+  font-size: clamp(18px, 18px + (40 - 18) * (100vw - 300px) / (1440 - 300), 40px);
 }
 
 .product-feature-phcr {
@@ -1661,6 +1661,7 @@ td {
 }
 .development-feature .df-content .dfc-flex img {
   width: 70vw;
+  border-radius: 10px;
 }
 @media (min-width: 768px) {
   .development-feature .df-content .dfc-flex img {
@@ -1846,6 +1847,9 @@ td {
     padding: 30px 20px;
     margin-top: 100px;
   }
+}
+.top-service .top-service-flex .service img {
+  border-radius: 15px;
 }
 
 .top-solution {
