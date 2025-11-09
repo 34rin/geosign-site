@@ -2288,17 +2288,9 @@ td {
   margin-top: 50px;
   flex-direction: column;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .product-function .function {
     gap: 50px;
-    margin-top: 100px;
-  }
-  .product-function .function:first-of-type {
-    margin-top: 50px;
-  }
-}
-@media (min-width: 1024px) {
-  .product-function .function:first-of-type {
     margin-top: 100px;
   }
 }
@@ -2370,12 +2362,6 @@ td {
   .product-function-report .pff-report .function-report {
     gap: 20px;
     width: 30%;
-    margin-top: 50px;
-  }
-}
-@media (min-width: 1024px) {
-  .product-function-report .pff-report .function-report {
-    margin-top: 100px;
   }
 }
 .product-function-report .function-report-img {
