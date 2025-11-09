@@ -196,9 +196,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
@@ -206,9 +206,9 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -217,9 +217,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -263,8 +263,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type="checkbox"],
-[type="radio"] {
+[type=checkbox],
+[type=radio] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
@@ -272,8 +272,8 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -281,7 +281,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -289,7 +289,7 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -337,8 +337,7 @@ template {
 /* 基本設定 */
 body {
   color: #343434;
-  font-family: "Yu Gothic", "Hiragino Sans", "メイリオ", "ＭＳ Ｐゴシック",
-    sans-serif;
+  font-family: "Yu Gothic", "Hiragino Sans", "メイリオ", "ＭＳ Ｐゴシック", sans-serif;
   font-weight: 400;
 }
 
@@ -386,11 +385,7 @@ h2 {
 }
 .text-box h2 {
   line-height: 1.5;
-  font-size: clamp(
-    15px,
-    15px + (64 - 15) * (100vw - 300px) / (1440 - 300),
-    64px
-  );
+  font-size: clamp(15px, 15px + (64 - 15) * (100vw - 300px) / (1440 - 300), 64px);
 }
 .text-box p {
   margin-top: 1em;
@@ -399,21 +394,13 @@ h2 {
 }
 
 .top-h2 {
-  font-size: clamp(
-    32px,
-    32px + (96 - 32) * (100vw - 300px) / (1440 - 300),
-    96px
-  );
+  font-size: clamp(32px, 32px + (96 - 32) * (100vw - 300px) / (1440 - 300), 96px);
 }
 .top-h2 span {
   color: #ffffff;
   display: block;
   margin-top: 10px;
-  font-size: clamp(
-    20px,
-    20px + (48 - 20) * (100vw - 300px) / (1440 - 300),
-    48px
-  );
+  font-size: clamp(20px, 20px + (48 - 20) * (100vw - 300px) / (1440 - 300), 48px);
 }
 .top-h2 .ts-title-1,
 .top-h2 .ts-title-2,
@@ -428,11 +415,7 @@ h2 {
 .top-h2 .ts-title-2 {
   color: #343434;
   vertical-align: middle;
-  font-size: clamp(
-    14px,
-    14px + (36 - 14) * (100vw - 300px) / (1440 - 300),
-    36px
-  );
+  font-size: clamp(14px, 14px + (36 - 14) * (100vw - 300px) / (1440 - 300), 36px);
 }
 .top-h2 .ts-title-3 {
   color: #ff2727;
@@ -453,28 +436,16 @@ h2 {
 }
 
 .service-title {
-  font-size: clamp(
-    16px,
-    16px + (28 - 16) * (100vw - 300px) / (1440 - 300),
-    28px
-  );
+  font-size: clamp(16px, 16px + (28 - 16) * (100vw - 300px) / (1440 - 300), 28px);
 }
 
 .service-text {
   font-weight: 400;
-  font-size: clamp(
-    13px,
-    13px + (18 - 13) * (100vw - 300px) / (1440 - 300),
-    18px
-  );
+  font-size: clamp(13px, 13px + (18 - 13) * (100vw - 300px) / (1440 - 300), 18px);
 }
 
 .solution-title {
-  font-size: clamp(
-    14px,
-    14px + (24 - 14) * (100vw - 300px) / (1440 - 300),
-    24px
-  );
+  font-size: clamp(14px, 14px + (24 - 14) * (100vw - 300px) / (1440 - 300), 24px);
 }
 @media (min-width: 768px) {
   .solution-title {
@@ -485,11 +456,7 @@ h2 {
 
 .solution-text {
   margin-top: 10px;
-  font-size: clamp(
-    12px,
-    12px + (20 - 12) * (100vw - 300px) / (1440 - 300),
-    20px
-  );
+  font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (1440 - 300), 20px);
 }
 @media (min-width: 768px) {
   .solution-text {
@@ -499,11 +466,7 @@ h2 {
 }
 
 .top-solution-phrase p {
-  font-size: clamp(
-    14px,
-    14px + (36 - 14) * (100vw - 300px) / (1440 - 300),
-    36px
-  );
+  font-size: clamp(14px, 14px + (36 - 14) * (100vw - 300px) / (1440 - 300), 36px);
 }
 
 .mt-num {
@@ -527,19 +490,11 @@ h2 {
 
 .mt-label {
   vertical-align: middle;
-  font-size: clamp(
-    20px,
-    20px + (32 - 20) * (100vw - 300px) / (1440 - 300),
-    32px
-  );
+  font-size: clamp(20px, 20px + (32 - 20) * (100vw - 300px) / (1440 - 300), 32px);
 }
 
 .method-text {
-  font-size: clamp(
-    14px,
-    14px + (24 - 14) * (100vw - 300px) / (1440 - 300),
-    24px
-  );
+  font-size: clamp(14px, 14px + (24 - 14) * (100vw - 300px) / (1440 - 300), 24px);
 }
 @media (min-width: 768px) {
   .method-text {
@@ -550,57 +505,33 @@ h2 {
 .price-title {
   color: #ffffff;
   background: #6495ed;
-  font-size: clamp(
-    20px,
-    20px + (36 - 20) * (100vw - 300px) / (1440 - 300),
-    36px
-  );
+  font-size: clamp(20px, 20px + (36 - 20) * (100vw - 300px) / (1440 - 300), 36px);
 }
 
 .price-header {
   color: #ffffff;
   background: #82c2ed;
-  font-size: clamp(
-    14px,
-    14px + (24 - 14) * (100vw - 300px) / (1440 - 300),
-    24px
-  );
+  font-size: clamp(14px, 14px + (24 - 14) * (100vw - 300px) / (1440 - 300), 24px);
 }
 
 td {
   font-weight: 400;
-  font-size: clamp(
-    10px,
-    10px + (20 - 10) * (100vw - 300px) / (1440 - 300),
-    20px
-  );
+  font-size: clamp(10px, 10px + (20 - 10) * (100vw - 300px) / (1440 - 300), 20px);
 }
 
 /* フッター */
 .afpd-text-1 {
   color: #ff0000;
-  font-size: clamp(
-    16px,
-    16px + (24 - 16) * (100vw - 300px) / (480 - 300),
-    24px
-  );
+  font-size: clamp(16px, 16px + (24 - 16) * (100vw - 300px) / (480 - 300), 24px);
 }
 @media (min-width: 480px) {
   .afpd-text-1 {
-    font-size: clamp(
-      24px,
-      24px + (28 - 24) * (100vw - 480px) / (768 - 480),
-      28px
-    );
+    font-size: clamp(24px, 24px + (28 - 24) * (100vw - 480px) / (768 - 480), 28px);
   }
 }
 @media (min-width: 768px) {
   .afpd-text-1 {
-    font-size: clamp(
-      20px,
-      20px + (32 - 20) * (100vw - 768px) / (1440 - 768),
-      32px
-    );
+    font-size: clamp(20px, 20px + (32 - 20) * (100vw - 768px) / (1440 - 768), 32px);
   }
 }
 
@@ -608,28 +539,16 @@ td {
   color: #ff0000;
   padding: 10px;
   background: #ffff00;
-  font-size: clamp(
-    14px,
-    14px + (20 - 14) * (100vw - 300px) / (480 - 300),
-    20px
-  );
+  font-size: clamp(14px, 14px + (20 - 14) * (100vw - 300px) / (480 - 300), 20px);
 }
 @media (min-width: 480px) {
   .afpd-text-2 {
-    font-size: clamp(
-      20px,
-      20px + (24 - 20) * (100vw - 480px) / (768 - 480),
-      24px
-    );
+    font-size: clamp(20px, 20px + (24 - 20) * (100vw - 480px) / (768 - 480), 24px);
   }
 }
 @media (min-width: 768px) {
   .afpd-text-2 {
-    font-size: clamp(
-      20px,
-      20px + (32 - 20) * (100vw - 768px) / (1440 - 768),
-      32px
-    );
+    font-size: clamp(20px, 20px + (32 - 20) * (100vw - 768px) / (1440 - 768), 32px);
   }
 }
 
@@ -638,28 +557,16 @@ td {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(
-    14px,
-    14px + (20 - 14) * (100vw - 300px) / (480 - 300),
-    20px
-  );
+  font-size: clamp(14px, 14px + (20 - 14) * (100vw - 300px) / (480 - 300), 20px);
 }
 @media (min-width: 480px) {
   .afpd-text-3 {
-    font-size: clamp(
-      20px,
-      20px + (24 - 20) * (100vw - 480px) / (768 - 480),
-      24px
-    );
+    font-size: clamp(20px, 20px + (24 - 20) * (100vw - 480px) / (768 - 480), 24px);
   }
 }
 @media (min-width: 768px) {
   .afpd-text-3 {
-    font-size: clamp(
-      20px,
-      20px + (32 - 20) * (100vw - 768px) / (1440 - 768),
-      32px
-    );
+    font-size: clamp(20px, 20px + (32 - 20) * (100vw - 768px) / (1440 - 768), 32px);
   }
 }
 .afpd-text-3 span {
@@ -667,149 +574,86 @@ td {
   text-decoration-color: #ffff00;
   text-decoration-thickness: 10px;
   text-underline-offset: -3px;
-  font-size: clamp(
-    36px,
-    36px + (40 - 36) * (100vw - 300px) / (480 - 300),
-    40px
-  );
+  font-size: clamp(36px, 36px + (40 - 36) * (100vw - 300px) / (480 - 300), 40px);
 }
 @media (min-width: 480px) {
   .afpd-text-3 span {
-    font-size: clamp(
-      40px,
-      40px + (44 - 40) * (100vw - 480px) / (768 - 480),
-      44px
-    );
+    font-size: clamp(40px, 40px + (44 - 40) * (100vw - 480px) / (768 - 480), 44px);
   }
 }
 @media (min-width: 768px) {
   .afpd-text-3 span {
-    font-size: clamp(
-      40px,
-      40px + (48 - 40) * (100vw - 768px) / (1440 - 768),
-      48px
-    );
+    font-size: clamp(40px, 40px + (48 - 40) * (100vw - 768px) / (1440 - 768), 48px);
   }
 }
 
 .afpd-text-4 {
   color: #12527d;
-  font-size: clamp(
-    14px,
-    14px + (20 - 14) * (100vw - 300px) / (480 - 300),
-    20px
-  );
+  font-size: clamp(14px, 14px + (20 - 14) * (100vw - 300px) / (480 - 300), 20px);
 }
 @media (min-width: 480px) {
   .afpd-text-4 {
-    font-size: clamp(
-      20px,
-      20px + (24 - 20) * (100vw - 480px) / (768 - 480),
-      24px
-    );
+    font-size: clamp(20px, 20px + (24 - 20) * (100vw - 480px) / (768 - 480), 24px);
   }
 }
 @media (min-width: 768px) {
   .afpd-text-4 {
-    font-size: clamp(
-      24px,
-      24px + (40 - 24) * (100vw - 768px) / (1440 - 768),
-      40px
-    );
+    font-size: clamp(24px, 24px + (40 - 24) * (100vw - 768px) / (1440 - 768), 40px);
   }
 }
 
 .afpd-text-5 {
   font-weight: 400;
-  font-size: clamp(
-    12px,
-    12px + (14 - 12) * (100vw - 300px) / (480 - 300),
-    14px
-  );
+  font-size: clamp(12px, 12px + (14 - 12) * (100vw - 300px) / (480 - 300), 14px);
 }
 @media (min-width: 480px) {
   .afpd-text-5 {
-    font-size: clamp(
-      14px,
-      14px + (16 - 14) * (100vw - 480px) / (768 - 480),
-      16px
-    );
+    font-size: clamp(14px, 14px + (16 - 14) * (100vw - 480px) / (768 - 480), 16px);
   }
 }
 @media (min-width: 768px) {
   .afpd-text-5 {
-    font-size: clamp(
-      16px,
-      16px + (20 - 16) * (100vw - 768px) / (1440 - 768),
-      20px
-    );
+    font-size: clamp(16px, 16px + (20 - 16) * (100vw - 768px) / (1440 - 768), 20px);
   }
 }
 
 .afi-nav {
-  font-size: clamp(
-    14px,
-    14px + (24 - 14) * (100vw - 300px) / (1440 - 300),
-    24px
-  );
+  font-size: clamp(14px, 14px + (24 - 14) * (100vw - 300px) / (1440 - 300), 24px);
 }
 
 .afi-nav > li > a {
-  margin: 15px 0;
   display: inline-block;
 }
 .afi-nav > li > a:hover {
   color: rgba(255, 255, 255, 0.8);
 }
-@media (min-width: 768px) {
-  .afi-nav > li > a {
-    margin: 0;
-  }
-}
 
-.afi-address-title,
-.afi-bh-title {
-  margin-bottom: 15px;
-  font-size: clamp(
-    16px,
-    16px + (24 - 16) * (100vw - 300px) / (1440 - 300),
-    24px
-  );
+.afi-address-title {
+  margin-bottom: 5px;
+  font-size: clamp(16px, 16px + (24 - 16) * (100vw - 300px) / (1440 - 300), 24px);
 }
-
 @media (min-width: 768px) {
   .afi-address-title {
-    margin-bottom: 20px;
-  }
-  .afi-bh-title {
-    margin: 0;
+    margin-bottom: 10px;
   }
 }
+
 .afi-address-text,
 .afi-bh-text {
-  margin-bottom: 10px;
-  font-size: clamp(
-    12px,
-    12px + (20 - 12) * (100vw - 300px) / (1440 - 300),
-    20px
-  );
-}
-.afi-address-text:last-child,
-.afi-bh-text:last-child {
-  margin: 0;
+  font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (1440 - 300), 20px);
 }
 
 .aat-post {
   text-indent: -1em;
 }
 
+.afi-bh-title {
+  font-size: clamp(16px, 16px + (24 - 16) * (100vw - 300px) / (1440 - 300), 24px);
+}
+
 .copyright {
   font-weight: 400;
-  font-size: clamp(
-    12px,
-    12px + (20 - 12) * (100vw - 300px) / (1440 - 300),
-    20px
-  );
+  font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (1440 - 300), 20px);
 }
 
 /* 製品ページ */
@@ -820,11 +664,7 @@ td {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: clamp(
-    24px,
-    24px + (64 - 24) * (100vw - 300px) / (1440 - 300),
-    64px
-  );
+  font-size: clamp(24px, 24px + (64 - 24) * (100vw - 300px) / (1440 - 300), 64px);
 }
 
 .product-about-h2 {
@@ -843,21 +683,13 @@ td {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: clamp(
-    16px,
-    16px + (36 - 16) * (100vw - 300px) / (1440 - 300),
-    36px
-  );
+  font-size: clamp(16px, 16px + (36 - 16) * (100vw - 300px) / (1440 - 300), 36px);
 }
 
 .pat-text {
   color: #004b64;
   line-height: 1.5;
-  font-size: clamp(
-    14px,
-    14px + (24 - 14) * (100vw - 300px) / (1440 - 300),
-    24px
-  );
+  font-size: clamp(14px, 14px + (24 - 14) * (100vw - 300px) / (1440 - 300), 24px);
 }
 
 .pae-title {
@@ -866,11 +698,7 @@ td {
   margin: 0 auto;
   padding: 15px;
   background: #004b64;
-  font-size: clamp(
-    16px,
-    16px + (32 - 16) * (100vw - 300px) / (1440 - 300),
-    32px
-  );
+  font-size: clamp(16px, 16px + (32 - 16) * (100vw - 300px) / (1440 - 300), 32px);
 }
 @media (min-width: 768px) {
   .pae-title {
@@ -882,11 +710,7 @@ td {
   text-align: start;
   font-weight: 400;
   line-height: 1.5;
-  font-size: clamp(
-    14px,
-    14px + (24 - 14) * (100vw - 300px) / (1440 - 300),
-    24px
-  );
+  font-size: clamp(14px, 14px + (24 - 14) * (100vw - 300px) / (1440 - 300), 24px);
 }
 @media (min-width: 768px) {
   .pae-text {
@@ -896,21 +720,13 @@ td {
 
 .product-h2 {
   color: rgba(100, 149, 237, 0.5);
-  font-size: clamp(
-    32px,
-    32px + (80 - 32) * (100vw - 300px) / (1440 - 300),
-    80px
-  );
+  font-size: clamp(32px, 32px + (80 - 32) * (100vw - 300px) / (1440 - 300), 80px);
 }
 .product-h2 span {
   color: #a9a9a9;
   display: block;
   margin-top: 10px;
-  font-size: clamp(
-    18px,
-    18px + (48 - 18) * (100vw - 300px) / (1440 - 300),
-    48px
-  );
+  font-size: clamp(18px, 18px + (48 - 18) * (100vw - 300px) / (1440 - 300), 48px);
 }
 
 .product-feature-phcr {
@@ -920,11 +736,7 @@ td {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: clamp(
-    24px,
-    24px + (48 - 24) * (100vw - 300px) / (1440 - 300),
-    48px
-  );
+  font-size: clamp(24px, 24px + (48 - 24) * (100vw - 300px) / (1440 - 300), 48px);
 }
 @media (min-width: 1024px) {
   .product-feature-phcr {
@@ -937,11 +749,7 @@ td {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: clamp(
-    24px,
-    24px + (40 - 24) * (100vw - 300px) / (1440 - 300),
-    40px
-  );
+  font-size: clamp(24px, 24px + (40 - 24) * (100vw - 300px) / (1440 - 300), 40px);
 }
 @media (min-width: 768px) {
   .ft-num {
@@ -958,11 +766,7 @@ td {
   background: linear-gradient(135deg, #6495ed, #40c3a3);
   text-align: center;
   border-radius: 10px;
-  font-size: clamp(
-    14px,
-    14px + (24 - 14) * (100vw - 300px) / (1440 - 300),
-    24px
-  );
+  font-size: clamp(14px, 14px + (24 - 14) * (100vw - 300px) / (1440 - 300), 24px);
 }
 @media (min-width: 480px) {
   .ft-text {
@@ -981,42 +785,26 @@ td {
 .feature-text {
   color: #004b64;
   font-weight: 400;
-  font-size: clamp(
-    12px,
-    12px + (20 - 12) * (100vw - 300px) / (1440 - 300),
-    20px
-  );
+  font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (1440 - 300), 20px);
 }
 
 .function-title {
   color: #12527d;
   border-bottom: 1px solid #12527d;
   padding-bottom: 5px;
-  font-size: clamp(
-    16px,
-    16px + (40 - 16) * (100vw - 300px) / (1440 - 300),
-    40px
-  );
+  font-size: clamp(16px, 16px + (40 - 16) * (100vw - 300px) / (1440 - 300), 40px);
 }
 
 .function-text {
   color: #12527d;
   text-align: start;
   font-weight: 400;
-  font-size: clamp(
-    12px,
-    12px + (20 - 12) * (100vw - 300px) / (768 - 300),
-    20px
-  );
+  font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (768 - 300), 20px);
 }
 @media (min-width: 768px) {
   .function-text {
     width: 45%;
-    font-size: clamp(
-      16px,
-      16px + (24 - 16) * (100vw - 768px) / (1440 - 768),
-      24px
-    );
+    font-size: clamp(16px, 16px + (24 - 16) * (100vw - 768px) / (1440 - 768), 24px);
   }
 }
 
@@ -1025,19 +813,11 @@ td {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(
-    16px,
-    16px + (24 - 16) * (100vw - 300px) / (768 - 300),
-    24px
-  );
+  font-size: clamp(16px, 16px + (24 - 16) * (100vw - 300px) / (768 - 300), 24px);
 }
 @media (min-width: 768px) {
   .function-title-report {
-    font-size: clamp(
-      15px,
-      15px + (28 - 15) * (100vw - 768px) / (1440 - 768),
-      28px
-    );
+    font-size: clamp(15px, 15px + (28 - 15) * (100vw - 768px) / (1440 - 768), 28px);
   }
 }
 .function-title-report img {
@@ -1061,49 +841,29 @@ td {
 
 .function-text-report {
   width: 100%;
-  font-size: clamp(
-    12px,
-    12px + (16 - 12) * (100vw - 300px) / (768 - 300),
-    16px
-  );
+  font-size: clamp(12px, 12px + (16 - 12) * (100vw - 300px) / (768 - 300), 16px);
 }
 @media (min-width: 768px) {
   .function-text-report {
-    font-size: clamp(
-      12px,
-      12px + (20 - 12) * (100vw - 768px) / (1440 - 768),
-      20px
-    );
+    font-size: clamp(12px, 12px + (20 - 12) * (100vw - 768px) / (1440 - 768), 20px);
   }
 }
 
 .prct-text {
   color: #004b64;
-  font-size: clamp(
-    16px,
-    16px + (40 - 16) * (100vw - 300px) / (1440 - 300),
-    40px
-  );
+  font-size: clamp(16px, 16px + (40 - 16) * (100vw - 300px) / (1440 - 300), 40px);
 }
 
 .prc-text-1 {
   color: #004b64;
   padding: 10px;
   background: #dfecf0;
-  font-size: clamp(
-    14px,
-    14px + (32 - 14) * (100vw - 300px) / (1440 - 300),
-    32px
-  );
+  font-size: clamp(14px, 14px + (32 - 14) * (100vw - 300px) / (1440 - 300), 32px);
 }
 
 .prc-text-2 {
   color: #004b64;
-  font-size: clamp(
-    12px,
-    12px + (24 - 12) * (100vw - 300px) / (1440 - 300),
-    24px
-  );
+  font-size: clamp(12px, 12px + (24 - 12) * (100vw - 300px) / (1440 - 300), 24px);
 }
 
 .prc-text-3 {
@@ -1111,11 +871,7 @@ td {
   display: flex;
   font-weight: 400;
   flex-direction: column;
-  font-size: clamp(
-    10px,
-    10px + (20 - 10) * (100vw - 300px) / (1440 - 300),
-    20px
-  );
+  font-size: clamp(10px, 10px + (20 - 10) * (100vw - 300px) / (1440 - 300), 20px);
 }
 @media (min-width: 768px) {
   .prc-text-3 {
@@ -1132,29 +888,17 @@ td {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: clamp(
-    20px,
-    20px + (64 - 20) * (100vw - 300px) / (1440 - 300),
-    64px
-  );
+  font-size: clamp(20px, 20px + (64 - 20) * (100vw - 300px) / (1440 - 300), 64px);
 }
 .dmv-title p {
   color: #004b64;
   font-weight: 700;
-  font-size: clamp(
-    10px,
-    10px + (32 - 10) * (100vw - 300px) / (1440 - 300),
-    32px
-  );
+  font-size: clamp(10px, 10px + (32 - 10) * (100vw - 300px) / (1440 - 300), 32px);
 }
 
 .development-h2 {
   color: rgba(255, 255, 255, 0.5);
-  font-size: clamp(
-    32px,
-    32px + (80 - 32) * (100vw - 300px) / (1440 - 300),
-    80px
-  );
+  font-size: clamp(32px, 32px + (80 - 32) * (100vw - 300px) / (1440 - 300), 80px);
 }
 
 .development-process-h2 {
@@ -1164,11 +908,7 @@ td {
   color: #a9a9a9;
   display: block;
   margin-top: 10px;
-  font-size: clamp(
-    18px,
-    18px + (48 - 18) * (100vw - 300px) / (1440 - 300),
-    48px
-  );
+  font-size: clamp(18px, 18px + (48 - 18) * (100vw - 300px) / (1440 - 300), 48px);
 }
 
 .dfc-title {
@@ -1176,11 +916,7 @@ td {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: clamp(
-    16px,
-    16px + (36 - 16) * (100vw - 300px) / (1440 - 300),
-    36px
-  );
+  font-size: clamp(16px, 16px + (36 - 16) * (100vw - 300px) / (1440 - 300), 36px);
 }
 
 .dfc-text {
@@ -1188,11 +924,7 @@ td {
   margin-top: 10px;
   text-align: start;
   font-weight: 400;
-  font-size: clamp(
-    12px,
-    12px + (24 - 12) * (100vw - 300px) / (1440 - 300),
-    24px
-  );
+  font-size: clamp(12px, 12px + (24 - 12) * (100vw - 300px) / (1440 - 300), 24px);
 }
 
 .dfcf-text {
@@ -1201,11 +933,7 @@ td {
   display: flex;
   font-weight: 400;
   flex-direction: column;
-  font-size: clamp(
-    12px,
-    12px + (20 - 12) * (100vw - 300px) / (1440 - 300),
-    20px
-  );
+  font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (1440 - 300), 20px);
 }
 
 .process-step {
@@ -1213,11 +941,7 @@ td {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: clamp(
-    12px,
-    12px + (20 - 12) * (100vw - 300px) / (1440 - 300),
-    20px
-  );
+  font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (1440 - 300), 20px);
 }
 @media (min-width: 768px) {
   .process-step {
@@ -1230,11 +954,7 @@ td {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: clamp(
-    30px,
-    30px + (40 - 30) * (100vw - 300px) / (1440 - 300),
-    40px
-  );
+  font-size: clamp(30px, 30px + (40 - 30) * (100vw - 300px) / (1440 - 300), 40px);
 }
 @media (min-width: 768px) {
   .process-num {
@@ -1246,11 +966,7 @@ td {
 
 .process-title {
   color: rgba(0, 75, 100, 0.5);
-  font-size: clamp(
-    20px,
-    20px + (24 - 20) * (100vw - 300px) / (1440 - 300),
-    24px
-  );
+  font-size: clamp(20px, 20px + (24 - 20) * (100vw - 300px) / (1440 - 300), 24px);
 }
 
 .process-text {
@@ -1258,22 +974,14 @@ td {
   margin-top: 10px;
   text-align: start;
   font-weight: 400;
-  font-size: clamp(
-    14px,
-    14px + (20 - 14) * (100vw - 300px) / (1440 - 300),
-    20px
-  );
+  font-size: clamp(14px, 14px + (20 - 14) * (100vw - 300px) / (1440 - 300), 20px);
 }
 
 .breadcrumb {
   gap: 0.5em;
   margin: 10vh 0 0 3vw;
   display: flex;
-  font-size: clamp(
-    12px,
-    12px + (16 - 12) * (100vw - 300px) / (1440 - 300),
-    16px
-  );
+  font-size: clamp(12px, 12px + (16 - 12) * (100vw - 300px) / (1440 - 300), 16px);
 }
 @media (min-width: 480px) {
   .breadcrumb {
@@ -1299,20 +1007,12 @@ td {
 .btn:hover {
   /* グラデの角度と明るさを少し変える */
   transform: translateY(-2px);
-  background: linear-gradient(
-    155deg,
-    rgb(40.8, 255, 244.08),
-    rgb(73.55, 207.25, 200.565)
-  );
+  background: linear-gradient(155deg, rgb(40.8, 255, 244.08), rgb(73.55, 207.25, 200.565));
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 .btn:active {
   transform: translateY(1px);
-  background: linear-gradient(
-    135deg,
-    rgb(0, 229.5, 217.8),
-    rgb(44.6875, 169.8125, 163.55625)
-  );
+  background: linear-gradient(135deg, rgb(0, 229.5, 217.8), rgb(44.6875, 169.8125, 163.55625));
 }
 .btn span {
   display: block;
@@ -1339,11 +1039,7 @@ td {
 .main-visual-btn {
   margin-top: 1em;
   font-weight: 700;
-  font-size: clamp(
-    10px,
-    10px + (30 - 10) * (100vw - 300px) / (1440 - 300),
-    30px
-  );
+  font-size: clamp(10px, 10px + (30 - 10) * (100vw - 300px) / (1440 - 300), 30px);
 }
 .main-visual-btn a span {
   padding: 10px 15px;
@@ -1360,11 +1056,7 @@ td {
 }
 
 .top-service-btn {
-  font-size: clamp(
-    12px,
-    12px + (20 - 12) * (100vw - 300px) / (1440 - 300),
-    20px
-  );
+  font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (1440 - 300), 20px);
 }
 .top-service-btn a span {
   padding: 12px 15px;
@@ -1372,11 +1064,7 @@ td {
 
 .top-solution-btn {
   margin-top: 30px;
-  font-size: clamp(
-    14px,
-    14px + (32 - 14) * (100vw - 300px) / (1440 - 300),
-    32px
-  );
+  font-size: clamp(14px, 14px + (32 - 14) * (100vw - 300px) / (1440 - 300), 32px);
 }
 @media (min-width: 768px) {
   .top-solution-btn {
@@ -1396,11 +1084,7 @@ td {
 
 .afpd-btn {
   background: #ff0000;
-  font-size: clamp(
-    14px,
-    14px + (24 - 14) * (100vw - 300px) / (1440 - 300),
-    24px
-  );
+  font-size: clamp(14px, 14px + (24 - 14) * (100vw - 300px) / (1440 - 300), 24px);
 }
 .afpd-btn:hover {
   background: rgb(249.5175, 41.1825, 41.1825);
@@ -1411,11 +1095,7 @@ td {
 
 .afi-btn {
   margin-bottom: 30px;
-  font-size: clamp(
-    14px,
-    14px + (24 - 14) * (100vw - 300px) / (1440 - 300),
-    24px
-  );
+  font-size: clamp(14px, 14px + (24 - 14) * (100vw - 300px) / (1440 - 300), 24px);
 }
 @media (min-width: 768px) {
   .afi-btn {
@@ -1430,11 +1110,7 @@ td {
 
 .product-feature-btn {
   margin-top: 30px;
-  font-size: clamp(
-    14px,
-    14px + (32 - 14) * (100vw - 300px) / (1440 - 300),
-    32px
-  );
+  font-size: clamp(14px, 14px + (32 - 14) * (100vw - 300px) / (1440 - 300), 32px);
 }
 @media (min-width: 768px) {
   .product-feature-btn {
@@ -1458,48 +1134,25 @@ td {
 
 .prc-btn {
   background: linear-gradient(#6495ed, #40c3a3);
-  font-size: clamp(
-    12px,
-    12px + (20 - 12) * (100vw - 300px) / (1440 - 300),
-    20px
-  );
+  font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (1440 - 300), 20px);
 }
 .prc-btn:hover {
-  background: linear-gradient(
-    rgb(136.5549132948, 173.9988439306, 241.2450867052),
-    rgb(95.0470119522, 204.7529880478, 177.9545816733)
-  );
+  background: linear-gradient(rgb(136.5549132948, 173.9988439306, 241.2450867052), rgb(95.0470119522, 204.7529880478, 177.9545816733));
 }
 .prc-btn:active {
-  background: linear-gradient(
-    135deg,
-    rgb(0, 229.5, 217.8),
-    rgb(44.6875, 169.8125, 163.55625)
-  );
+  background: linear-gradient(135deg, rgb(0, 229.5, 217.8), rgb(44.6875, 169.8125, 163.55625));
 }
 
 .development-process-btn {
   background: linear-gradient(135deg, #6495ed, #40c3a3);
   margin-top: 30px;
-  font-size: clamp(
-    16px,
-    16px + (32 - 16) * (100vw - 300px) / (1440 - 300),
-    32px
-  );
+  font-size: clamp(16px, 16px + (32 - 16) * (100vw - 300px) / (1440 - 300), 32px);
 }
 .development-process-btn:hover {
-  background: linear-gradient(
-    155deg,
-    rgb(136.5549132948, 173.9988439306, 241.2450867052),
-    rgb(95.0470119522, 204.7529880478, 177.9545816733)
-  );
+  background: linear-gradient(155deg, rgb(136.5549132948, 173.9988439306, 241.2450867052), rgb(95.0470119522, 204.7529880478, 177.9545816733));
 }
 .development-process-btn:active {
-  background: linear-gradient(
-    135deg,
-    rgb(0, 229.5, 217.8),
-    rgb(44.6875, 169.8125, 163.55625)
-  );
+  background: linear-gradient(135deg, rgb(0, 229.5, 217.8), rgb(44.6875, 169.8125, 163.55625));
 }
 @media (min-width: 768px) {
   .development-process-btn {
@@ -1612,13 +1265,7 @@ td {
 
 .afi-nav-pdm {
   cursor: pointer;
-  margin: 15px 0;
   display: inline-block;
-}
-@media (min-width: 768px) {
-  .afi-nav-pdm {
-    margin: 0;
-  }
 }
 .afi-nav-pdm span {
   display: block;
@@ -1651,7 +1298,7 @@ td {
 }
 
 .afi-nav-sm {
-  margin-top: 15px;
+  margin: 15px 0 -15px;
 }
 
 .sub-menu-absolute {
@@ -1767,7 +1414,7 @@ td {
 }
 .all-footer .af-info .afi-sitemap {
   margin: 0 7vw;
-  padding: 15px 0;
+  padding: 30px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
@@ -1775,9 +1422,18 @@ td {
   .all-footer .af-info .afi-sitemap {
     padding: 40px 0;
   }
+}
+.all-footer .af-info .afi-sitemap .afi-nav {
+  gap: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
   .all-footer .af-info .afi-sitemap .afi-nav {
     gap: 50px;
-    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     justify-content: center;
   }
 }
@@ -1793,15 +1449,22 @@ td {
     justify-content: center;
   }
 }
+.all-footer .af-info .afi-address-flex .afi-address {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
 .all-footer .af-info .afi-business-hours {
+  gap: 15px;
+  display: flex;
+  align-items: center;
   margin-bottom: -30px;
+  flex-direction: column;
 }
 @media (min-width: 768px) {
   .all-footer .af-info .afi-business-hours {
-    gap: 10px;
-    display: flex;
-    align-items: center;
     margin-bottom: -50px;
+    flex-direction: row;
     justify-content: center;
   }
 }
@@ -2813,10 +2476,7 @@ td {
     align-items: center;
   }
 }
-.product-recommendation-terminal
-  .product-recommendation
-  .pr-content
-  .prc-title {
+.product-recommendation-terminal .product-recommendation .pr-content .prc-title {
   gap: 10px;
   display: flex;
   align-self: stretch;
@@ -2825,58 +2485,31 @@ td {
   padding-bottom: 10px;
 }
 @media (min-width: 768px) {
-  .product-recommendation-terminal
-    .product-recommendation
-    .pr-content
-    .prc-title {
+  .product-recommendation-terminal .product-recommendation .pr-content .prc-title {
     justify-content: center;
   }
 }
-.product-recommendation-terminal
-  .product-recommendation
-  .pr-content
-  .prc-title
-  .prct-icon {
+.product-recommendation-terminal .product-recommendation .pr-content .prc-title .prct-icon {
   padding: 5px;
   background: #004b64;
   aspect-ratio: 1/1;
   border-radius: 50%;
 }
-.product-recommendation-terminal
-  .product-recommendation
-  .pr-content
-  .prc-title
-  .prct-icon
-  img {
+.product-recommendation-terminal .product-recommendation .pr-content .prc-title .prct-icon img {
   width: 6vw;
 }
 @media (min-width: 480px) {
-  .product-recommendation-terminal
-    .product-recommendation
-    .pr-content
-    .prc-title
-    .prct-icon
-    img {
+  .product-recommendation-terminal .product-recommendation .pr-content .prc-title .prct-icon img {
     width: 5vw;
   }
 }
 @media (min-width: 768px) {
-  .product-recommendation-terminal
-    .product-recommendation
-    .pr-content
-    .prc-title
-    .prct-icon
-    img {
+  .product-recommendation-terminal .product-recommendation .pr-content .prc-title .prct-icon img {
     width: 3.8vw;
   }
 }
 @media (min-width: 1024px) {
-  .product-recommendation-terminal
-    .product-recommendation
-    .pr-content
-    .prc-title
-    .prct-icon
-    img {
+  .product-recommendation-terminal .product-recommendation .pr-content .prc-title .prct-icon img {
     width: 2.7vw;
   }
 }
