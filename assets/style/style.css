@@ -935,6 +935,16 @@ td {
   flex-direction: column;
   font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (1440 - 300), 20px);
 }
+@media (min-width: 1024px) {
+  .dfcf-text {
+    gap: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .dfcf-text {
+    line-height: 1.5;
+  }
+}
 
 .process-step {
   background: linear-gradient(135deg, #6495ed, #40c3a3);
@@ -1661,7 +1671,6 @@ td {
 }
 @media (min-width: 768px) {
   .development-feature .df-content .dfc-flex {
-    gap: 30px;
     padding: 20px;
     margin-top: 30px;
     flex-direction: row;
@@ -1669,6 +1678,7 @@ td {
 }
 @media (min-width: 1024px) {
   .development-feature .df-content .dfc-flex {
+    gap: 30px;
     padding: 30px 25px;
   }
 }
