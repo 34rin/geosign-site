@@ -1646,7 +1646,7 @@ td {
 .development-feature .df-content .dfc-flex {
   gap: 20px;
   display: flex;
-  padding: 15px;
+  padding: 20px;
   background: #ffffff;
   margin-top: 20px;
   text-align: start;
@@ -1656,17 +1656,23 @@ td {
 }
 @media (min-width: 480px) {
   .development-feature .df-content .dfc-flex {
-    padding: 20px;
+    padding: 25px;
   }
 }
 @media (min-width: 768px) {
   .development-feature .df-content .dfc-flex {
+    gap: 30px;
+    padding: 20px;
     margin-top: 30px;
     flex-direction: row;
   }
 }
+@media (min-width: 1024px) {
+  .development-feature .df-content .dfc-flex {
+    padding: 30px 25px;
+  }
+}
 .development-feature .df-content .dfc-flex img {
-  width: 70vw;
   border-radius: 10px;
 }
 @media (min-width: 768px) {
