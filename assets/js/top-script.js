@@ -1,125 +1,107 @@
 /* スライドショー */
-const slides = document.querySelectorAll(".slide");
-let current = 0;
-let intervalId;
+function initTopVisual() {
+  const slides = document.querySelectorAll(".slide");
+  if (!slides.length) return;
 
-// スライド切替
-function showNextSlide() {
-  slides[current].classList.remove("active");
-  current = (current + 1) % slides.length;
-  slides[current].classList.add("active");
-  updateTextPosition(slides[current]);
-  preloadNextSlide(current);
-}
+  let current = 0;
 
-// 文字位置調整
-function updateTextPosition(slide) {
-  if (!slide) return;
-  const isSP = window.innerWidth <= 767;
-  const img = isSP
-    ? slide.querySelector(".slide-sp")
-    : slide.querySelector(".slide-pc");
-  const box = slide.querySelector(".content-box");
-  if (!img || !box) return;
-
-  const imgHeight = img.clientHeight;
-  let topPercent = slide.classList.contains("slide-1")
-    ? isSP
-      ? 0.25
-      : 0.16
-    : slide.classList.contains("slide-2")
-    ? isSP
-      ? 0.25
-      : 0.18
-    : slide.classList.contains("slide-3")
-    ? isSP
-      ? 0.5
-      : 0.45
-    : 0.25;
-
-  box.style.top = imgHeight * topPercent + "px";
-}
-
-// メインビジュアル高さ調整
-function adjustMainVisualHeight() {
-  const main = document.querySelector(".main-visual");
-  let maxHeight = 0;
-  const isSP = window.innerWidth <= 767;
-
-  slides.forEach((slide) => {
-    const img = isSP
-      ? slide.querySelector(".slide-sp")
-      : slide.querySelector(".slide-pc");
-    if (img && img.clientHeight > maxHeight) maxHeight = img.clientHeight;
+  // 最初のスライドだけ表示
+  slides.forEach((s, i) => {
+    s.style.opacity = i === 0 ? "1" : "0";
+    s.style.zIndex = i === 0 ? "1" : "0";
   });
 
-  main.style.height = maxHeight + "px";
+  // スライド切替
+  function showNextSlide() {
+    slides[current].style.opacity = "0";
+    slides[current].style.zIndex = "0";
 
-  const waveContainer = document.querySelector(".main-visual-wave");
-  const wave = waveContainer?.querySelector("img");
-  if (wave && waveContainer) {
-    waveContainer.style.position = "relative";
-    waveContainer.style.width = "100%";
-    const overlap = 0.7;
-    waveContainer.style.marginTop = `-${wave.clientHeight * overlap}px`;
+    current = (current + 1) % slides.length;
+
+    slides[current].style.opacity = "1";
+    slides[current].style.zIndex = "1";
+
+    updateTextPosition();
   }
-}
 
-// 次スライドの画像をプリロード
-function preloadNextSlide(index) {
-  const nextIndex = (index + 1) % slides.length;
-  const imgs = slides[nextIndex].querySelectorAll("img");
-  imgs.forEach((img) => {
-    if (!img.complete) {
-      const tmp = new Image();
-      tmp.src = img.src;
+  // 文字位置調整
+  function updateTextPosition() {
+    const isSP = window.innerWidth <= 767;
+    slides.forEach((slide) => {
+      const img = isSP
+        ? slide.querySelector(".slide-sp")
+        : slide.querySelector(".slide-pc");
+      const contentBox = slide.querySelector(".content-box");
+      if (!img || !contentBox) return;
+
+      const imgHeight = img.clientHeight;
+      let topPercent = slide.classList.contains("slide-1")
+        ? isSP
+          ? 0.25
+          : 0.16
+        : slide.classList.contains("slide-2")
+        ? isSP
+          ? 0.25
+          : 0.18
+        : slide.classList.contains("slide-3")
+        ? isSP
+          ? 0.5
+          : 0.45
+        : 0.25;
+      contentBox.style.top = imgHeight * topPercent + "px";
+    });
+  }
+
+  // main-visual 高さ調整 & wave
+  function adjustMainVisualHeight() {
+    const mainVisual = document.querySelector(".main-visual");
+    if (!mainVisual) return;
+    const isSP = window.innerWidth <= 767;
+
+    let maxHeight = 0;
+    slides.forEach((slide) => {
+      const img = isSP
+        ? slide.querySelector(".slide-sp")
+        : slide.querySelector(".slide-pc");
+      if (img && img.clientHeight > maxHeight) maxHeight = img.clientHeight;
+    });
+    mainVisual.style.height = maxHeight + "px";
+
+    const waveContainer = document.querySelector(".main-visual-wave");
+    const wave = waveContainer ? waveContainer.querySelector("img") : null;
+    if (wave && waveContainer) {
+      waveContainer.style.position = "relative";
+      waveContainer.style.width = "100%";
+      const overlap = 0.7;
+      waveContainer.style.marginTop = `-${wave.clientHeight * overlap}px`;
     }
-  });
-}
-
-// 初期化（最初のスライドだけ即表示）
-function initSlideShow() {
-  const firstSlide = slides[0];
-  const firstImgs = firstSlide.querySelectorAll("img");
-  let loaded = 0;
-
-  firstImgs.forEach((img) => {
-    if (img.complete) loaded++;
-    else
-      img.addEventListener("load", () => {
-        loaded++;
-        if (loaded === firstImgs.length) {
-          updateTextPosition(firstSlide);
-          adjustMainVisualHeight();
-        }
-      });
-  });
-
-  if (loaded === firstImgs.length) {
-    updateTextPosition(firstSlide);
-    adjustMainVisualHeight();
   }
 
-  // IntersectionObserverで画面に見えたらスライド開始
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if (!intervalId) intervalId = setInterval(showNextSlide, 5000);
-          observer.disconnect(); // 一度開始したら監視解除
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
+  // 画像ロード後に初期化
+  function initImages() {
+    const imgs = document.querySelectorAll(".main-visual img");
+    let loaded = 0;
+    imgs.forEach((img) => {
+      if (img.complete) loaded++;
+      else
+        img.addEventListener("load", () => {
+          loaded++;
+          if (loaded === imgs.length) {
+            updateTextPosition();
+            adjustMainVisualHeight();
+          }
+        });
+    });
+    if (loaded === imgs.length) {
+      updateTextPosition();
+      adjustMainVisualHeight();
+    }
+  }
 
-  observer.observe(document.querySelector(".main-visual"));
+  initImages();
+  setInterval(showNextSlide, 5000);
+  window.addEventListener("resize", () => {
+    updateTextPosition();
+    adjustMainVisualHeight();
+  });
 }
-
-// リサイズ時に再計算
-window.addEventListener("resize", () => {
-  updateTextPosition(slides[current]);
-  adjustMainVisualHeight();
-});
-
-window.addEventListener("load", initSlideShow);

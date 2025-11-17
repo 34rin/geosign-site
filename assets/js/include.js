@@ -24,6 +24,9 @@ fetch(headerFile)
     if (isTop) {
       const topScript = document.createElement("script");
       topScript.src = "assets/js/top-script.js";
+      topScript.onload = () => {
+        if (typeof initTopVisual === "function") initTopVisual();
+      };
       document.body.appendChild(topScript);
     }
   });
