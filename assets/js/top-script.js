@@ -69,36 +69,37 @@ function adjustMainVisualHeight() {
   }
 }
 
-// 画像ロード後に初期化
-function initMainVisual() {
-  const allImages = document.querySelectorAll(".main-visual img");
+// 初期化：最初の画像ロード後に実行
+function initSlideShow() {
+  const firstImages = slides[0].querySelectorAll("img");
   let loadedCount = 0;
+  const total = firstImages.length;
 
-  allImages.forEach((img) => {
+  firstImages.forEach((img) => {
     if (img.complete) loadedCount++;
     else
       img.addEventListener("load", () => {
         loadedCount++;
-        if (loadedCount === allImages.length) {
-          updateTextPosition();
+        if (loadedCount === total) {
+          updateTextPosition(slides[0]);
           adjustMainVisualHeight();
         }
       });
   });
 
-  if (loadedCount === allImages.length) {
-    updateTextPosition();
+  if (loadedCount === total) {
+    updateTextPosition(slides[0]);
     adjustMainVisualHeight();
   }
 }
 
-// 初期化
+// window load で初期化 & スライド切替開始
 window.addEventListener("load", () => {
-  initMainVisual();
+  initSlideShow();
   setInterval(showNextSlide, 5000); // 5秒ごと切替
 });
 
 window.addEventListener("resize", () => {
-  updateTextPosition();
+  updateTextPosition(slides[current]);
   adjustMainVisualHeight();
 });
