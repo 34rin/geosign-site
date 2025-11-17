@@ -1789,11 +1789,6 @@ td {
   text-align: center;
 }
 
-.slide.active {
-  opacity: 1;
-  z-index: 1;
-}
-
 .main-visual-wave {
   z-index: 2;
   position: relative;

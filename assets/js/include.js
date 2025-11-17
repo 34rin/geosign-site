@@ -24,6 +24,10 @@ fetch(headerFile)
     if (isTop) {
       const topScript = document.createElement("script");
       topScript.src = "assets/js/top-script.js";
+      topScript.onload = () => {
+        // DOM + 画像のロード完了後に初期化
+        waitForSlidesAndImages();
+      };
       document.body.appendChild(topScript);
     }
   });
@@ -34,3 +38,33 @@ fetch("components/footer.html")
   .then((data) => {
     document.getElementById("footer").innerHTML = data;
   });
+
+/* ---------- トップページ用初期化補助 ---------- */
+function waitForSlidesAndImages() {
+  const mainVisual = document.querySelector(".main-visual");
+  if (!mainVisual) return;
+
+  const images = mainVisual.querySelectorAll("img");
+  let loadedCount = 0;
+
+  if (images.length === 0) {
+    // 画像なしならすぐ初期化
+    if (typeof initTopVisual === "function") initTopVisual();
+    return;
+  }
+
+  images.forEach((img) => {
+    if (img.complete) loadedCount++;
+    else
+      img.addEventListener("load", () => {
+        loadedCount++;
+        if (loadedCount === images.length) {
+          if (typeof initTopVisual === "function") initTopVisual();
+        }
+      });
+  });
+
+  if (loadedCount === images.length) {
+    if (typeof initTopVisual === "function") initTopVisual();
+  }
+}
