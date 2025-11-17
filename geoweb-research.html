@@ -28,7 +28,70 @@
     <link rel="stylesheet" href="assets/style/style.css" />
   </head>
   <body>
-    <div id="header"></div>
+    <header class="all-header">
+      <div class="all-header-logo">
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="ジオサイン GeoSign" />
+        </a>
+      </div>
+      <!-- ハンバーガーメニュー -->
+      <div class="hamburger-menu" id="hamburgermenu">
+        <div class="ham-menu-inner">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <nav class="hamburger-menu-nav" id="hamburgermenunav">
+        <ul class="ham-nav">
+          <li class="pull-down-menu pdm-ham">
+            製品紹介 <i class="fa-solid fa-chevron-down"></i>
+          </li>
+          <li class="pull-down-menu-sub">
+            <ul class="sub-menu">
+              <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
+              <li><a href="g-report.html">G-Report</a></li>
+              <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="development.html">受託開発</a>
+          </li>
+          <li>
+            <a href="#">FAQ</a>
+          </li>
+          <li>
+            <div class="btn ham-nav-btn">
+              <a href="#"><span>トライアル申込はこちら</span></a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <nav class="all-header-nav">
+        <ul class="header-nav">
+          <li class="pull-down-menu pdm-header-nav">
+            製品紹介 <i class="fa-solid fa-chevron-down"></i>
+          </li>
+          <li>
+            <ul class="sub-menu sub-menu-absolute">
+              <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
+              <li><a href="g-report.html">G-Report</a></li>
+              <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="development.html">受託開発</a>
+          </li>
+          <li>
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-nav-btn">
+        <div class="btn">
+          <a href="#"><span>トライアル申込</span></a>
+        </div>
+      </div>
+    </header>
 
     <main>
       <div class="product-main-visual">
@@ -179,8 +242,81 @@
       </div>
     </main>
 
-    <div id="footer"></div>
+    <footer class="all-footer">
+      <div class="af-price-demo">
+        <div class="afpd-content">
+          <div class="afpd-title">
+            <p class="afpd-text-1">デモ期間中は</p>
+            <p class="afpd-text-2">アプリ料金/サーバー料金</p>
+            <p class="afpd-text-3">全て<span>０円</span></p>
+          </div>
+          <p class="afpd-text-4">無料デモ 実施中</p>
+          <div>
+            <div class="btn afpd-btn">
+              <a href="#"><span>無料デモはこちら</span></a>
+            </div>
+          </div>
+          <p class="afpd-text-5">※無料デモは最長1か月</p>
+        </div>
+      </div>
+      <div class="af-info">
+        <div class="afi-logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="ジオサイン GeoSign" />
+          </a>
+        </div>
+        <nav class="afi-sitemap">
+          <ul class="afi-nav">
+            <li class="afi-nav-pdm">
+              <span>製品紹介 <i class="fa-solid fa-chevron-down"></i></span>
+              <ul class="afi-nav-sm">
+                <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
+                <li><a href="g-report.html">G-Report</a></li>
+                <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="development.html">受託開発</a>
+            </li>
+            <li>
+              <a href="#">FAQ</a>
+            </li>
+            <li>
+              <a href="#">トライアル申込</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="afi-address-flex">
+          <div class="afi-address">
+            <p class="afi-address-title">本社</p>
+            <p class="afi-address-text aat-post">〒 101-0025</p>
+            <p class="afi-address-text">東京都千代田区神田佐久間町2-7</p>
+            <p class="afi-address-text">TEL 03-5823-4931</p>
+            <p class="afi-address-text">FAX 03-5823-4930</p>
+          </div>
+          <div class="afi-address">
+            <p class="afi-address-title">レンタルセンター</p>
+            <p class="afi-address-text aat-post">〒 270-0163</p>
+            <p class="afi-address-text">千葉県流山市南流山3-7-4</p>
+            <p class="afi-address-text">TEL 04-7170-0423</p>
+            <p class="afi-address-text">FAX 04-7170-0424</p>
+          </div>
+        </div>
+        <div class="afi-business-hours">
+          <p class="afi-bh-title">営業時間</p>
+          <p class="afi-bh-text">平日 9:00-18:00（土日祝休み）</p>
+        </div>
+        <div class="afi-background">
+          <div class="btn afi-btn">
+            <a href="#"><span>トライアル申込はこちら</span></a>
+          </div>
+          <div class="copyright">
+            <small>© 2025 GeoSign Ltd. All rights resarved.</small>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
