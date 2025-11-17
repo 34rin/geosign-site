@@ -1760,6 +1760,10 @@ td {
   position: absolute;
   transition: opacity 1s;
 }
+.main-visual .slide.active {
+  opacity: 1;
+  z-index: 1;
+}
 @media (min-width: 768px) {
   .main-visual .slide .slide-sp {
     display: none;
