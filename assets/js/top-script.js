@@ -1,94 +1,104 @@
 /* スライドショー */
-function initTopVisual() {
-  const slides = Array.from(document.querySelectorAll(".slide"));
-  if (!slides.length) return;
+const slides = document.querySelectorAll(".slide");
+let current = 0;
 
-  let current = 0;
+// スライド切替
+function showNextSlide() {
+  slides.forEach((s) => s.classList.remove("active"));
+  current = (current + 1) % slides.length;
+  slides[current].classList.add("active");
+  updateTextPosition();
+}
 
-  // contentBoxと画像をキャッシュ
-  const slideData = slides.map((slide) => ({
-    slide,
-    spImg: slide.querySelector(".slide-sp"),
-    pcImg: slide.querySelector(".slide-pc"),
-    contentBox: slide.querySelector(".content-box"),
-    topPercent: slide.classList.contains("slide-1")
-      ? [0.25, 0.16]
+// 文字位置調整
+function updateTextPosition() {
+  const isSP = window.innerWidth <= 767;
+
+  slides.forEach((slide) => {
+    const img = isSP
+      ? slide.querySelector(".slide-sp")
+      : slide.querySelector(".slide-pc");
+    const contentBox = slide.querySelector(".content-box");
+    if (!img || !contentBox) return;
+
+    const imgHeight = img.clientHeight;
+    let topPercent = slide.classList.contains("slide-1")
+      ? isSP
+        ? 0.25
+        : 0.16
       : slide.classList.contains("slide-2")
-      ? [0.25, 0.18]
+      ? isSP
+        ? 0.25
+        : 0.18
       : slide.classList.contains("slide-3")
-      ? [0.5, 0.45]
-      : [0.25, 0.25],
-  }));
+      ? isSP
+        ? 0.5
+        : 0.45
+      : 0.25;
 
-  // 最初のスライド表示
-  slideData.forEach((s, i) => {
-    s.slide.style.opacity = i === 0 ? "1" : "0";
-    s.slide.style.zIndex = i === 0 ? "1" : "0";
+    contentBox.style.top = imgHeight * topPercent + "px";
+  });
+}
+
+// main-visual 高さ調整
+function adjustMainVisualHeight() {
+  const mainVisual = document.querySelector(".main-visual");
+  const isSP = window.innerWidth <= 767;
+
+  let maxHeight = 0;
+  slides.forEach((slide) => {
+    const img = isSP
+      ? slide.querySelector(".slide-sp")
+      : slide.querySelector(".slide-pc");
+    if (img && img.clientHeight > maxHeight) maxHeight = img.clientHeight;
   });
 
-  function updateTextPosition() {
-    const isSP = window.innerWidth <= 767;
-    slideData.forEach((s) => {
-      const img = isSP ? s.spImg : s.pcImg;
-      if (!img || !s.contentBox) return;
-      const h = img.clientHeight;
-      const topPercent = isSP ? s.topPercent[0] : s.topPercent[1];
-      s.contentBox.style.top = h * topPercent + "px";
-    });
+  mainVisual.style.height = maxHeight + "px";
+
+  // wave を main-visual 下に配置して少し重ねる
+  const waveContainer = document.querySelector(".main-visual-wave");
+  const wave = waveContainer ? waveContainer.querySelector("img") : null;
+
+  if (wave && waveContainer) {
+    waveContainer.style.position = "relative";
+    waveContainer.style.width = "100%";
+
+    // 上に少し重ねる場合は margin-top
+    const overlap = 0.7; // 70% wave の高さ分だけ main-visual に被せる
+    waveContainer.style.marginTop = `-${wave.clientHeight * overlap}px`;
   }
+}
 
-  function adjustMainVisualHeight() {
-    const isSP = window.innerWidth <= 767;
-    const mainVisual = document.querySelector(".main-visual");
-    if (!mainVisual) return;
-    const maxH = Math.max(
-      ...slideData.map((s) => {
-        const img = isSP ? s.spImg : s.pcImg;
-        return img ? img.clientHeight : 0;
-      })
-    );
-    mainVisual.style.height = maxH + "px";
+// 画像ロード後に初期化
+function initMainVisual() {
+  const allImages = document.querySelectorAll(".main-visual img");
+  let loadedCount = 0;
 
-    const wave = document.querySelector(".main-visual-wave img");
-    if (wave) {
-      const overlap = 0.7;
-      document.querySelector(".main-visual-wave").style.marginTop = `-${
-        wave.clientHeight * overlap
-      }px`;
-    }
-  }
-
-  function showNextSlide() {
-    slideData[current].slide.style.opacity = "0";
-    slideData[current].slide.style.zIndex = "0";
-    current = (current + 1) % slideData.length;
-    slideData[current].slide.style.opacity = "1";
-    slideData[current].slide.style.zIndex = "1";
-    updateTextPosition();
-  }
-
-  // 画像ロード完了後初期化
-  const imgs = document.querySelectorAll(".main-visual img");
-  let loaded = 0;
-  imgs.forEach((img) => {
-    if (img.complete) loaded++;
+  allImages.forEach((img) => {
+    if (img.complete) loadedCount++;
     else
       img.addEventListener("load", () => {
-        loaded++;
-        if (loaded === imgs.length) {
+        loadedCount++;
+        if (loadedCount === allImages.length) {
           updateTextPosition();
           adjustMainVisualHeight();
         }
       });
   });
-  if (loaded === imgs.length) {
+
+  if (loadedCount === allImages.length) {
     updateTextPosition();
     adjustMainVisualHeight();
   }
-
-  setInterval(showNextSlide, 5000);
-  window.addEventListener("resize", () => {
-    updateTextPosition();
-    adjustMainVisualHeight();
-  });
 }
+
+// 初期化
+window.addEventListener("load", () => {
+  initMainVisual();
+  setInterval(showNextSlide, 5000); // 5秒ごと切替
+});
+
+window.addEventListener("resize", () => {
+  updateTextPosition();
+  adjustMainVisualHeight();
+});
