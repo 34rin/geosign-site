@@ -1789,8 +1789,8 @@ td {
   text-align: center;
 }
 
-.slide:first-child {
-  opacity: 1; /* 初期表示はCSSで対応 */
+.slide.active {
+  opacity: 1;
   z-index: 1;
 }
 

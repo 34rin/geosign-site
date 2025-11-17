@@ -20,14 +20,12 @@ fetch(headerFile)
     script.src = "assets/js/script.js";
     document.body.appendChild(script);
 
-    // トップページならトップ用スクリプトを追加
+    // トップページ専用スクリプト
     if (isTop) {
       const topScript = document.createElement("script");
       topScript.src = "assets/js/top-script.js";
-      topScript.onload = () => {
-        if (typeof initTopVisual === "function") initTopVisual();
-      };
       document.body.appendChild(topScript);
+      // top-script.js 内で window.load が走るので initTopVisual の呼び出しは不要
     }
   });
 
