@@ -1754,6 +1754,7 @@ td {
 .main-visual {
   overflow: hidden;
   position: relative;
+   aspect-ratio: 1440 / 700;
 }
 .main-visual .slide {
   opacity: 0;
