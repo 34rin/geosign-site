@@ -9,14 +9,19 @@ const headerFile = isTop
 
 document.getElementById("header").innerHTML = "Loading...";
 
-// ヘッダー読み込み
+/* ---------- ヘッダー読み込み ---------- */
 fetch(headerFile)
   .then((resp) => resp.text())
   .then((data) => {
     document.getElementById("header").innerHTML = data;
+
+    // ここで script.js を読み込む（ヘッダー読込後に実行される）
+    const script = document.createElement("script");
+    script.src = "assets/js/script.js";
+    document.body.appendChild(script);
   });
 
-// フッター読み込み
+/* ---------- フッター読み込み ---------- */
 fetch("components/footer.html")
   .then((resp) => resp.text())
   .then((data) => {
