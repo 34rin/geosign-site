@@ -15,10 +15,17 @@ fetch(headerFile)
   .then((data) => {
     document.getElementById("header").innerHTML = data;
 
-    // ここで script.js を読み込む（ヘッダー読込後に実行される）
+    // 共通スクリプトを読み込む
     const script = document.createElement("script");
     script.src = "assets/js/script.js";
     document.body.appendChild(script);
+
+    // トップページならトップ用スクリプトを追加
+    if (isTop) {
+      const topScript = document.createElement("script");
+      topScript.src = "assets/js/top-script.js";
+      document.body.appendChild(topScript);
+    }
   });
 
 /* ---------- フッター読み込み ---------- */
