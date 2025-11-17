@@ -1758,7 +1758,7 @@ td {
 .main-visual .slide {
   opacity: 0;
   position: absolute;
-  transition: opacity 1s;
+  transition: opacity 0.3s;
 }
 @media (min-width: 768px) {
   .main-visual .slide .slide-sp {
@@ -1789,6 +1789,10 @@ td {
   text-align: center;
 }
 
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
 .main-visual-wave {
   z-index: 2;
   position: relative;
