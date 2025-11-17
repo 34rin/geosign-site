@@ -993,26 +993,6 @@ td {
   font-size: clamp(14px, 14px + (20 - 14) * (100vw - 300px) / (1440 - 300), 20px);
 }
 
-.breadcrumb {
-  gap: 0.5em;
-  margin: 10vh 0 0 3vw;
-  display: flex;
-  font-size: clamp(12px, 12px + (16 - 12) * (100vw - 300px) / (1440 - 300), 16px);
-}
-@media (min-width: 480px) {
-  .breadcrumb {
-    margin-top: 11vh;
-  }
-}
-@media (min-width: 768px) {
-  .breadcrumb {
-    margin: 15vh 0 0 2vw;
-  }
-}
-.breadcrumb a {
-  color: #343434;
-}
-
 .btn {
   display: inline-block;
   background: linear-gradient(135deg, #00fff2, #32beb7);
