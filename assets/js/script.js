@@ -1,6 +1,3 @@
-/* テスト */
-// console.log('JSファイル読み込まれました');
-
 /* ハンバーガーメニュー */
 const hamburgermenu = document.getElementById("hamburgermenu");
 const hamburgermenunav = document.getElementById("hamburgermenunav");
