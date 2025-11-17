@@ -25,8 +25,7 @@ fetch(headerFile)
       const topScript = document.createElement("script");
       topScript.src = "assets/js/top-script.js";
       topScript.onload = () => {
-        // DOM + 画像のロード完了後に初期化
-        waitForSlidesAndImages();
+        initTopVisual();
       };
       document.body.appendChild(topScript);
     }
