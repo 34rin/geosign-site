@@ -5,6 +5,7 @@ function initTopVisual() {
 
   let current = 0;
 
+  // スライド切替
   slides.forEach((s, i) => {
     s.style.opacity = i === 0 ? "1" : "0";
     s.style.zIndex = i === 0 ? "1" : "0";
@@ -22,6 +23,7 @@ function initTopVisual() {
     updateTextPosition();
   }
 
+  // 文字位置調整
   function updateTextPosition() {
     const isSP = window.innerWidth <= 767;
     slides.forEach((slide) => {
@@ -48,6 +50,7 @@ function initTopVisual() {
     });
   }
 
+  // main-visual 高さ調整
   function adjustMainVisualHeight() {
     const main = document.querySelector(".main-visual");
     if (!main) return;
@@ -61,6 +64,7 @@ function initTopVisual() {
     });
     main.style.height = maxH + "px";
 
+    // wave を main-visual 下に配置して少し重ねる
     const wave = document.querySelector(".main-visual-wave img");
     if (wave) {
       wave.parentElement.style.marginTop = `-${wave.clientHeight * 0.7}px`;
@@ -68,6 +72,7 @@ function initTopVisual() {
     }
   }
 
+  // 画像ロード後に初期化
   function initImages() {
     const imgs = document.querySelectorAll(".main-visual img");
     let loaded = 0;
@@ -89,7 +94,7 @@ function initTopVisual() {
   }
 
   initImages();
-  setInterval(showNextSlide, 5000);
+  setInterval(showNextSlide, 5000); // 5秒ごと切替
   window.addEventListener("resize", () => {
     updateTextPosition();
     adjustMainVisualHeight();
