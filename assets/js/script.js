@@ -6,10 +6,12 @@ window.addEventListener("load", () => {
   const hamburgermenu = document.getElementById("hamburgermenu");
   const hamburgermenunav = document.getElementById("hamburgermenunav");
 
-  hamburgermenu.addEventListener("click", () => {
-    hamburgermenu.classList.toggle("active");
-    hamburgermenunav.classList.toggle("active");
-  });
+  if (hamburgermenu && hamburgermenunav) {
+    hamburgermenu.addEventListener("click", () => {
+      hamburgermenu.classList.toggle("active");
+      hamburgermenunav.classList.toggle("active");
+    });
+  }
 
   /* プルダウンメニュー */
   document.querySelectorAll(".pull-down-menu").forEach((menu) => {
