@@ -2,12 +2,14 @@
 // console.log('JSファイル読み込まれました');
 
 /* ハンバーガーメニュー */
-const hamburgermenu = document.getElementById("hamburgermenu");
-const hamburgermenunav = document.getElementById("hamburgermenunav");
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburgermenu = document.getElementById("hamburgermenu");
+  const hamburgermenunav = document.getElementById("hamburgermenunav");
 
-hamburgermenu.addEventListener("click", () => {
-  hamburgermenu.classList.toggle("active");
-  hamburgermenunav.classList.toggle("active");
+  hamburgermenu.addEventListener("click", () => {
+    hamburgermenu.classList.toggle("active");
+    hamburgermenunav.classList.toggle("active");
+  });
 });
 
 /* プルダウンメニュー */
