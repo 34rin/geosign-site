@@ -371,10 +371,16 @@ h2 {
   padding: 20px;
 }
 
-.ham-nav > .pull-down-menu-sub {
+.ham-nav-pdm > ul > li {
+  width: 100%;
+  font-size: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+.ham-nav-pdm > ul > li:last-child {
   border: none;
 }
-.ham-nav > .pull-down-menu-sub .sub-menu {
+.ham-nav-pdm > ul > li:last-child .sub-menu {
   margin: -5px 0 20px;
 }
 
@@ -1166,30 +1172,11 @@ td {
   }
 }
 
-.hamburger-menu-nav {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  position: fixed;
-  background: linear-gradient(#1a75b2, #004b64);
-  visibility: hidden;
-  transition: opacity 0.4s, visibility 0.4s;
-  /* 開いたとき */
-}
-.hamburger-menu-nav .ham-nav {
-  display: flex;
-  margin-top: 100px;
-  align-items: center;
-  flex-direction: column;
-}
-.hamburger-menu-nav.active {
-  opacity: 1;
-  visibility: visible;
+/* ハンバーガーアイコン */
+#menu-btn-check {
+  display: none;
 }
 
-/* ハンバーガーアイコン */
 .hamburger-menu {
   width: 80px;
   height: 36px;
@@ -1199,14 +1186,13 @@ td {
   box-shadow: 0px 4px 10px rgba(162, 183, 190, 0.3);
   margin-right: 15px;
   border-radius: 50px;
-  /* アクティブ時の変形 */
 }
 @media (min-width: 480px) {
   .hamburger-menu {
     width: 90px;
   }
 }
-.hamburger-menu .ham-menu-inner {
+.hamburger-menu .menu-btn {
   width: 50px;
   height: 6px;
   display: flex;
@@ -1217,91 +1203,120 @@ td {
   justify-content: space-between;
 }
 @media (min-width: 480px) {
-  .hamburger-menu .ham-menu-inner {
+  .hamburger-menu .menu-btn {
     width: 60px;
   }
 }
-.hamburger-menu .ham-menu-inner span {
+.hamburger-menu .menu-btn span {
   height: 1px;
+  display: flex;
   background: #6495ed;
   box-shadow: 0 0 2px #ffffff;
   transition: all 0.3s ease-in-out;
   border-radius: 2px;
 }
-.hamburger-menu.active span:first-child {
+
+/* チェック時の変形 */
+#menu-btn-check:checked ~ .hamburger-menu .menu-btn span:first-child {
   transform: translateY(2.5px) rotate(10deg);
 }
-.hamburger-menu.active span:last-child {
+#menu-btn-check:checked ~ .hamburger-menu .menu-btn span:last-child {
   transform: translateY(-2.5px) rotate(-10deg);
+}
+
+/* ハンバーガーメニューナビ */
+.hamburger-menu-nav {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  background: linear-gradient(#1a75b2, #004b64);
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+.hamburger-menu-nav .ham-nav {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.hamburger-menu-nav .ham-nav-pdm > ul {
+  display: flex;
+  margin-top: 100px;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* チェックが入ったらもろもろ表示 */
+#menu-btn-check:checked ~ .hamburger-menu-nav {
+  opacity: 1;
+  visibility: visible;
+}
+
+#pull-down-menu,
+#pull-down-menu-absolute {
+  display: none;
 }
 
 .pull-down-menu {
   color: #ffffff;
   cursor: pointer;
-  /* 開いた時に矢印を回転 */
 }
-.pull-down-menu i {
-  transition: transform 0.3s;
-}
-.pull-down-menu.open i {
-  transform: rotate(180deg);
-}
-
-.pdm-ham {
-  padding: 20px 0;
-}
-
-.pdm-header-nav {
-  padding: 20px 15px;
-}
-.pdm-header-nav:hover {
-  color: rgba(255, 255, 255, 0.8);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.afi-nav-pdm {
-  cursor: pointer;
-  display: inline-block;
-}
-.afi-nav-pdm span {
+.pull-down-menu label {
   display: block;
-  /* 開いた時に矢印を回転 */
+  padding: 20px;
 }
-.afi-nav-pdm span:hover {
-  color: rgba(255, 255, 255, 0.8);
-}
-.afi-nav-pdm span i {
+.pull-down-menu label i {
   transition: transform 0.3s;
 }
-.afi-nav-pdm span.open i {
+
+/* 開いた時に矢印を回転 */
+#pull-down-menu:checked ~ .pull-down-menu label i {
   transform: rotate(180deg);
 }
 
-.sub-menu,
-.afi-nav-sm {
+.pull-down-menu-absolute {
+  color: #ffffff;
+  cursor: pointer;
+}
+.pull-down-menu-absolute label {
+  display: block;
+}
+.pull-down-menu-absolute label i {
+  transition: transform 0.3s;
+}
+
+/* 開いた時に矢印を回転 */
+#pull-down-menu-absolute:checked ~ label i {
+  transform: rotate(180deg);
+}
+
+.sub-menu {
   display: none;
   background: #3f7283;
 }
-.sub-menu li a,
-.afi-nav-sm li a {
+.sub-menu li a {
   display: block;
   padding: 10px;
 }
-.sub-menu li a:hover,
-.afi-nav-sm li a:hover {
+.sub-menu li a:hover {
   color: rgba(255, 255, 255, 0.8);
   background: rgba(0, 75, 100, 0.5);
 }
 
-.afi-nav-sm {
-  margin: 15px 0 -15px;
+/* チェックされたら表示 */
+#pull-down-menu:checked ~ li .sub-menu {
+  display: inline-block;
 }
 
 .sub-menu-absolute {
   top: 100%;
   left: 0;
+  display: none;
   position: absolute;
   border-radius: 15px;
+  background: #3f7283;
 }
 .sub-menu-absolute li:first-child > a {
   border-top-left-radius: 15px;
@@ -1310,6 +1325,19 @@ td {
 .sub-menu-absolute li:last-child > a {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+.sub-menu-absolute li a {
+  display: block;
+  padding: 10px;
+}
+.sub-menu-absolute li a:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 75, 100, 0.5);
+}
+
+/* チェックされたら表示 */
+#pull-down-menu-absolute:checked ~ .sub-menu-absolute {
+  display: inline-block;
 }
 
 .all-footer {
@@ -1564,11 +1592,16 @@ td {
   color: rgba(255, 255, 255, 0.8);
   background: rgba(255, 255, 255, 0.15);
 }
-.header-nav > li:first-child {
+.header-nav > li:first-of-type label {
+  padding: 20px 15px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
 }
-.header-nav > li:last-child > a {
+.header-nav > li:first-of-type label:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.15);
+}
+.header-nav > li:last-of-type > a {
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
 }

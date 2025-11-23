@@ -28,70 +28,32 @@
     <link rel="stylesheet" href="assets/style/style.css" />
   </head>
   <body>
-    <header class="all-header">
-      <div class="all-header-logo">
-        <a href="index.html">
-          <img src="assets/images/logo.png" alt="ジオサイン GeoSign" />
-        </a>
-      </div>
-      <!-- ハンバーガーメニュー -->
-      <div class="hamburger-menu" id="hamburgermenu">
-        <div class="ham-menu-inner">
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-      <nav class="hamburger-menu-nav" id="hamburgermenunav">
-        <ul class="ham-nav">
-          <li class="pull-down-menu pdm-ham">
-            製品紹介 <i class="fa-solid fa-chevron-down"></i>
-          </li>
-          <li class="pull-down-menu-sub">
-            <ul class="sub-menu">
-              <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
-              <li><a href="g-report.html">G-Report</a></li>
-              <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="development.html">受託開発</a>
-          </li>
-          <li>
-            <a href="#">FAQ</a>
-          </li>
-          <li>
-            <div class="btn ham-nav-btn">
-              <a href="#"><span>トライアル申込はこちら</span></a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-      <nav class="all-header-nav">
-        <ul class="header-nav">
-          <li class="pull-down-menu pdm-header-nav">
-            製品紹介 <i class="fa-solid fa-chevron-down"></i>
-          </li>
-          <li>
-            <ul class="sub-menu sub-menu-absolute">
-              <li><a href="geoweb-research.html">GeoWeb地盤調査</a></li>
-              <li><a href="g-report.html">G-Report</a></li>
-              <li><a href="geoweb-photocross.html">GeoWebPhoto/Cross</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="development.html">受託開発</a>
-          </li>
-          <li>
-            <a href="#">FAQ</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="header-nav-btn">
-        <div class="btn">
-          <a href="#"><span>トライアル申込</span></a>
-        </div>
-      </div>
-    </header>
+    <!-- headerを読み込む -->
+    <div id="header-include"></div>
+
+    <script>
+      // header全体を読み込む
+      fetch("inc/header-lower-page.html")
+        .then((res) => res.text())
+        .then((html) => {
+          // header-includeに挿入
+          document.getElementById("header-include").innerHTML = html;
+
+          // header内のpull-down-menuを読み込む
+          const pdmContainer = document.querySelector("#ham-nav-pdm-include");
+          if (pdmContainer) {
+            fetch("inc/pull-down-menu.html")
+              .then((res) => res.text())
+              .then((menuHtml) => {
+                pdmContainer.innerHTML = menuHtml;
+              })
+              .catch((err) =>
+                console.error("プルダウンメニュー読み込み失敗", err)
+              );
+          }
+        })
+        .catch((err) => console.error("ヘッダー読み込み失敗", err));
+    </script>
 
     <main>
       <div class="product-main-visual">
@@ -359,7 +321,5 @@
         </div>
       </div>
     </footer>
-
-    <script src="assets/js/script.js"></script>
   </body>
 </html>
