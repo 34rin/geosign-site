@@ -1823,23 +1823,46 @@ td {
 }
 .main-visual .slide .content-box {
   position: absolute;
-  transform: translateY(0); /* JSで動的に設定 */
 }
 .main-visual .slide .cb-1 {
+  top: 25%;
   left: 10%;
 }
+@media (min-width: 768px) {
+  .main-visual .slide .cb-1 {
+    top: 16%;
+  }
+}
 .main-visual .slide .cb-2 {
+  top: 25%;
   left: 50%;
 }
+@media (min-width: 768px) {
+  .main-visual .slide .cb-2 {
+    top: 18%;
+  }
+}
 .main-visual .slide .cb-3 {
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+@media (min-width: 768px) {
+  .main-visual .slide .cb-3 {
+    top: 45%;
+  }
 }
 
 .main-visual-wave {
   z-index: 2;
   position: relative;
+  margin-top: -15%;
+}
+@media (min-width: 768px) {
+  .main-visual-wave {
+    margin-top: -13%;
+  }
 }
 
 .top-service {
