@@ -42,24 +42,23 @@
     </script>
 
     <main>
-      <div class="product-main-visual">
+      <div class="page-main-visual">
         <div class="pmv-title">
-          <img src="assets/images/report-icon.webp" alt="レポートアイコン" />
           <h1>G-Report</h1>
         </div>
         <img
-          class="pmv-sp pmv-report"
+          class="pmv-sp pmv-opacity-1"
           src="assets/images/product-main-visual-sp-3.webp"
           alt="G-Reportメインビジュアル"
         />
         <img
-          class="pmv-pc pmv-report"
+          class="pmv-pc pmv-opacity-1"
           src="assets/images/product-main-visual-pc-3.webp"
           alt="G-Reportメインビジュアル"
         />
       </div>
 
-      <div class="product-about">
+      <div class="base-content base-content-gry product-about">
         <div class="product-about-title">
           <h2 class="product-about-h2">
             <p>地盤調査報告書を、もっとスマートに。</p>
@@ -70,10 +69,12 @@
         </div>
       </div>
 
-      <div class="product-feature">
-        <h2 class="product-h2">Feature<span>G-Reportの特長</span></h2>
-        <div class="product-feature-flex">
-          <div class="feature feature-report">
+      <div class="base-content product-feature">
+        <h2 class="page-h2 page-h2-en">
+          Feature<span class="page-h2-sub page-h2-sub-gry">G-Reportの特長</span>
+        </h2>
+        <div class="content-flex">
+          <div class="content-box feature feature-report">
             <div class="feature-title">
               <p class="ft-num">01</p>
               <p class="ft-text">データ連携</p>
@@ -82,7 +83,7 @@
               現地でGeoWebアプリからデータを送信すれば、G-Reportとリアルタイム連携。内勤者も即座に閲覧でき、報告書作成を早められます。
             </p>
           </div>
-          <div class="feature feature-report">
+          <div class="content-box feature feature-report">
             <div class="feature-title">
               <p class="ft-num">02</p>
               <p class="ft-text">報告書作成の時短</p>
@@ -92,8 +93,8 @@
             </p>
           </div>
         </div>
-        <div class="product-feature-flex">
-          <div class="feature feature-report">
+        <div class="content-flex">
+          <div class="content-box feature feature-report">
             <div class="feature-title">
               <p class="ft-num">03</p>
               <p class="ft-text">追加機能</p>
@@ -102,7 +103,7 @@
               要望の多い機能は随時追加します。「法改正に伴う項目追加」や「より使いやすくなる改善案」など、イメージでも構いませんのでお知らせください。
             </p>
           </div>
-          <div class="feature feature-report">
+          <div class="content-box feature feature-report">
             <div class="feature-title">
               <p class="ft-num">04</p>
               <p class="ft-text">各社用のカスタマイズ実績</p>
@@ -117,44 +118,50 @@
         </div>
       </div>
 
-      <div class="product-function product-function-report">
-        <h2 class="product-h2">Function<span>G-Reportの機能</span></h2>
-        <div class="pff-report">
-          <div class="function function-report">
-            <p class="function-title function-title-report">
+      <div
+        class="base-content base-content-gap base-content-gry product-function-report"
+      >
+        <h2 class="page-h2 page-h2-en">
+          Function<span class="page-h2-sub page-h2-sub-gry"
+            >G-Reportの機能</span
+          >
+        </h2>
+        <div class="content-flex">
+          <div class="function-report">
+            <p class="function-title-report">
               <img
                 src="assets/images/result-icon.webp"
                 alt="判定結果アイコン"
               />簡易液状化判定結果
             </p>
-            <p class="function-text function-text-report">
+            <p class="function-text-report">
               測点データをもとに非液状化層（H1）、液状化層（H2）を算出し、液状化の危険度を簡易的に計ります。位置情報をもとに液状化危険度をハザードマップから引用することで危険度が一目でわかります。
             </p>
           </div>
-          <div class="function function-report">
-            <p class="function-title function-title-report">
+          <div class="function-report">
+            <p class="function-title-report">
               <img
-                src="assets/images/layer-icon-2.webp"
+                src="assets/images/layer-icon.webp"
                 alt="地層アイコン"
               />断面図機能
             </p>
-            <p class="function-text function-text-report">
+            <p class="function-text-report">
               Wsw（荷重平均・単位kN）とNsw（1mあたりの半回転数の平均値・単位回）を用いて地盤の弱い層・強い層を一覧で確認することができます。複数のポイントを並べることも可能です。
             </p>
           </div>
-          <div class="function function-report">
-            <p class="function-title function-title-report">
+          <div class="function-report">
+            <p class="function-title-report">
               <img
                 src="assets/images/import-icon.webp"
                 alt="インポートアイコン"
               />YBM調査機データの取込
             </p>
-            <p class="function-text function-text-report">
+            <p class="function-text-report">
               GeoWebでは非対応のYBM調査データも、G-Reportでは取込が可能です。GeoWebから写真とチェックリストを送信、YBM調査データは手動でアップロードする使い方も可能です。
             </p>
           </div>
         </div>
-        <div class="function-img function-report-img">
+        <div class="function-report-img">
           <img
             class="fri-1"
             src="assets/images/function-9.webp"
@@ -168,8 +175,10 @@
         </div>
       </div>
 
-      <div class="product-sample">
-        <h2 class="product-h2">Sample<span>サンプル帳票</span></h2>
+      <div class="base-content product-sample">
+        <h2 class="page-h2 page-h2-en">
+          Sample<span class="page-h2-sub page-h2-sub-gry">サンプル帳票</span>
+        </h2>
         <div class="sample-img">
           <img src="assets/images/sample-1.webp" alt="サンプル帳票1" />
           <img src="assets/images/sample-2.webp" alt="サンプル帳票2" />

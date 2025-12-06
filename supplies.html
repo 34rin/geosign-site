@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- 文字コード -->
+    <meta charset="UTF-8" />
+    <!-- ビューポート設定・ピンチイン -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 基本SEO -->
+    <title>備品販売｜ジオサイン株式会社</title>
+    <meta
+      name="description"
+      content="ジオサイン株式会社は、地盤調査・施工システムを中心に、現場の効率化とデータ連携を支援するソリューションを提供しています。"
+    />
+    <meta
+      name="keywords"
+      content="地盤調査, 地盤改良, GeoWeb, 施工, ジオカルテ"
+    />
+    <!-- Font Awesome Kitの読み込み -->
+    <script
+      src="https://kit.fontawesome.com/4ff44a9951.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- 電話番号自動認識オフ -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- favicon -->
+    <link rel="icon" href="favicon.ico" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style/style.css" />
+  </head>
+  <body>
+    <!-- headerを読み込む -->
+    <div id="header-include"></div>
+    <script>
+      // header全体を読み込む
+      fetch("inc/header-lower-page.html")
+        .then((res) => res.text())
+        .then((html) => {
+          // header-includeに挿入
+          document.getElementById("header-include").innerHTML = html;
+        })
+        .catch((err) => console.error("ヘッダー読み込み失敗", err));
+    </script>
+
+    <main>
+      <div class="page-main-visual">
+        <div class="pmv-title">
+          <h1>備品販売</h1>
+        </div>
+        <img
+          class="pmv-sp pmv-opacity-1"
+          src="assets/images/sales-main-visual-sp.webp"
+          alt="備品販売メインビジュアル"
+        />
+        <img
+          class="pmv-pc pmv-opacity-1"
+          src="assets/images/sales-main-visual-pc.webp"
+          alt="備品販売メインビジュアル"
+        />
+      </div>
+
+      <div class="base-content base-content-gry supplies-about">
+        <h2 class="page-h2 page-h2-ja-2">
+          備品をWebサイトで購入できるサイトを公開中<span
+            class="page-h2-sub page-h2-sub-add page-h2-sub-nv"
+          >
+            ジオカルテに取付するロッドやメインケーブルを含めた備品類、FlashAirや端末の保護シールや保護ケースを販売しています。</span
+          >
+        </h2>
+        <div class="content-box-frame content-box-frame-nv-bl sa-point">
+          <div class="content-box-inner sa-point-inner">
+            <p class="sa-pi-title">POINT</p>
+            <p class="sa-pi-text">
+              ・手続き等は不要でインターネットで購入が完結します
+            </p>
+            <p class="sa-pi-text">
+              ・クレジットカードでの決済が可能<br />※前払いとなります
+            </p>
+          </div>
+        </div>
+        <div class="btn page-nv-bl-btn sa-btn">
+          <a href="https://geosign.stores.jp/">GEOSIGN STORE</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- footerを読み込む -->
+    <div id="footer-include"></div>
+    <script>
+      // footer全体を読み込む
+      fetch("inc/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          // footer-includeに挿入
+          document.getElementById("footer-include").innerHTML = html;
+        })
+        .catch((err) => console.error("ヘッダー読み込み失敗", err));
+    </script>
+  </body>
+</html>

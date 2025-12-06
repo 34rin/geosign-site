@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- 文字コード -->
+    <meta charset="UTF-8" />
+    <!-- ビューポート設定・ピンチイン -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 基本SEO -->
+    <title>レンタル｜ジオサイン株式会社</title>
+    <meta
+      name="description"
+      content="ジオサイン株式会社は、地盤調査・施工システムを中心に、現場の効率化とデータ連携を支援するソリューションを提供しています。"
+    />
+    <meta
+      name="keywords"
+      content="地盤調査, 地盤改良, GeoWeb, 施工, ジオカルテ"
+    />
+    <!-- Font Awesome Kitの読み込み -->
+    <script
+      src="https://kit.fontawesome.com/4ff44a9951.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- 電話番号自動認識オフ -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- favicon -->
+    <link rel="icon" href="favicon.ico" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style/style.css" />
+  </head>
+  <body>
+    <!-- headerを読み込む -->
+    <div id="header-include"></div>
+    <script>
+      // header全体を読み込む
+      fetch("inc/header-lower-page.html")
+        .then((res) => res.text())
+        .then((html) => {
+          // header-includeに挿入
+          document.getElementById("header-include").innerHTML = html;
+        })
+        .catch((err) => console.error("ヘッダー読み込み失敗", err));
+    </script>
+
+    <main>
+      <div class="page-main-visual">
+        <div class="pmv-title">
+          <h1>レンタル</h1>
+          <p class="pmv-title-sub-2">
+            1日からレンタル可能・急な故障でも即座対応
+          </p>
+        </div>
+        <img
+          class="pmv-sp"
+          src="assets/images/geo-karute-mv-sp-3.webp"
+          alt="レンタルメインビジュアル"
+        />
+        <img
+          class="pmv-pc"
+          src="assets/images/geo-karute-mv-pc-3.webp"
+          alt="レンタルメインビジュアル"
+        />
+      </div>
+
+      <div class="base-content base-content-gry geo-karute-price">
+        <h2 class="page-h2 page-h2-en">
+          About<span class="page-h2-sub page-h2-sub-nv gkp-sub-title"
+            >ジオカルテの修理または校正で代替機が必要な場合、数か月待ちになることが多く、現場稼働に支障をもたらしている。短期間でのレンタル要望をいただくため、ジオサインではレンタル機を導入しました。</span
+          >
+        </h2>
+        <h2 class="page-h2 page-h2-en">
+          Price<span class="page-h2-sub page-h2-sub-nv">料金表</span>
+        </h2>
+        <div class="content-flex">
+          <div class="content-box-frame gkp-content gkpc-bl">
+            <div class="content-box-inner gkp-content-inner">
+              <p class="gkp-ci-title gkp-cit-bl">1日</p>
+              <div class="gkp-ci-price gkp-cip-bl">
+                <p class="gkp-cip-title">月額料金</p>
+                <p class="gkp-cip-price">6,000円(税抜)</p>
+              </div>
+              <p class="gkp-ci-text gkp-citx-bl">
+                1~6日だけ利用したい方にオススメのプラン
+              </p>
+            </div>
+          </div>
+          <div class="content-box-frame gkp-content gkpc-gr">
+            <div class="content-box-inner gkp-content-inner">
+              <p class="gkp-ci-title gkp-cit-gr">1週間</p>
+              <div class="gkp-ci-price gkp-cip-gr">
+                <p class="gkp-cip-title">月額料金</p>
+                <p class="gkp-cip-price">39,800円(税抜)</p>
+                <p class="gkp-cip-note">※1日あたり約5,700円</p>
+              </div>
+              <p class="gkp-ci-text gkp-citx-gr">
+                緊急修理する方にオススメのプラン
+              </p>
+            </div>
+          </div>
+          <div class="content-box-frame gkp-content gkpc-pk">
+            <div class="content-box-inner gkp-content-inner">
+              <p class="gkp-ci-title gkp-cit-pk">1ヶ月</p>
+              <div class="gkp-ci-price gkp-cip-pk">
+                <p class="gkp-cip-title">月額料金</p>
+                <p class="gkp-cip-price">126,000円(税抜)</p>
+                <p class="gkp-cip-note">※1日あたり4,200円</p>
+              </div>
+              <p class="gkp-ci-text gkp-citx-pk">
+                短期調査や校正する方にオススメのプラン
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="gkp-note">
+          ※別途送料が発生いたします。予めご了承ください。<br />※引き取りの場合は送料は無しとなります。
+        </p>
+      </div>
+    </main>
+
+    <!-- footerを読み込む -->
+    <div id="footer-include"></div>
+    <script>
+      // footer全体を読み込む
+      fetch("inc/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          // footer-includeに挿入
+          document.getElementById("footer-include").innerHTML = html;
+        })
+        .catch((err) => console.error("ヘッダー読み込み失敗", err));
+    </script>
+  </body>
+</html>

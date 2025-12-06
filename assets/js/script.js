@@ -1,4 +1,4 @@
-/* スライドショー */
+/***** スライドショー *****/
 
 const slides = document.querySelectorAll(".slide");
 const mainVisual = document.querySelector(".main-visual");
