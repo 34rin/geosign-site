@@ -166,7 +166,6 @@ img {
 }
 @media (min-width: 480px) {
   .page-main-visual .pmv-title.pmv-title-add {
-    gap: 20px;
     top: 50%;
   }
 }
@@ -586,6 +585,10 @@ td {
   font-size: clamp(16px, 16px + (40 - 16) * (100vw - 300px) / (1440 - 300), 40px);
 }
 
+.pmv-title-sub-add-2 {
+  font-size: clamp(12px, 12px + (40 - 12) * (100vw - 300px) / (1440 - 300), 40px);
+}
+
 /***** h2の設定 *****/
 /* トップページ */
 .top-h2 {
@@ -659,10 +662,6 @@ td {
 
 .page-h2-ja {
   font-size: clamp(24px, 24px + (48 - 24) * (100vw - 300px) / (1440 - 300), 48px);
-}
-
-.page-h2-ja-2 {
-  font-size: clamp(20px, 20px + (40 - 20) * (100vw - 300px) / (1440 - 300), 40px);
 }
 
 .page-h2-add {
@@ -1280,7 +1279,7 @@ td {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: clamp(16px, 16px + (48 - 16) * (100vw - 300px) / (1440 - 300), 48px);
+  font-size: clamp(16px, 16px + (52 - 16) * (100vw - 300px) / (1440 - 300), 52px);
 }
 
 .gkl-ui-text {
@@ -2358,6 +2357,14 @@ td {
     margin-bottom: 100px;
   }
 }
+.geo-karute-list .gkls-about {
+  padding: 0 4vw;
+}
+@media (min-width: 768px) {
+  .geo-karute-list .gkls-about {
+    padding: 0;
+  }
+}
 .geo-karute-list .gkl-sales {
   gap: 30px;
   display: flex;
@@ -2371,14 +2378,6 @@ td {
 @media (min-width: 1024px) {
   .geo-karute-list .gkl-sales {
     gap: 100px;
-  }
-}
-.geo-karute-list .gkl-sales .gkls-about {
-  padding: 0 2vw;
-}
-@media (min-width: 768px) {
-  .geo-karute-list .gkl-sales .gkls-about {
-    padding: 0;
   }
 }
 .geo-karute-list .gkl-sales .gkls-list {
@@ -2398,22 +2397,12 @@ td {
   }
 }
 .geo-karute-list .gkl-used {
-  margin: 0 2vw;
+  margin: 0 4vw;
   max-width: 940px;
 }
 @media (min-width: 768px) {
   .geo-karute-list .gkl-used {
     margin: 0 auto;
-  }
-}
-@media (min-width: 480px) {
-  .geo-karute-list .gkl-used .gkl-used-inner {
-    padding: 20px;
-  }
-}
-@media (min-width: 768px) {
-  .geo-karute-list .gkl-used .gkl-used-inner {
-    padding: 30px;
   }
 }
 
@@ -3407,7 +3396,7 @@ td {
 .trial-terms .tt-box {
   border: 1px solid #004b64;
   height: 200px;
-  padding: 15px;
+  padding: 10px;
   overflow: hidden;
   background: #ffffff;
 }
@@ -3418,14 +3407,22 @@ td {
 }
 @media (min-width: 768px) {
   .trial-terms .tt-box {
-    gap: 20px;
+    padding: 15px;
     height: 300px;
   }
 }
 .trial-terms .tt-box .tt-box-inner {
+  gap: 15px;
+  display: flex;
   box-sizing: border-box;
   overflow-y: scroll;
   padding-right: 15px;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .trial-terms .tt-box .tt-box-inner {
+    gap: 20px;
+  }
 }
 .trial-terms .tt-agree .checkbox-label {
   gap: 3px;
