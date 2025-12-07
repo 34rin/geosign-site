@@ -164,9 +164,20 @@ img {
   top: 55%;
   width: 80vw;
 }
+@media (min-width: 480px) {
+  .page-main-visual .pmv-title.pmv-title-add {
+    gap: 20px;
+    top: 50%;
+  }
+}
 @media (min-width: 768px) {
   .page-main-visual .pmv-title.pmv-title-add {
     gap: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .page-main-visual .pmv-title.pmv-title-add {
+    top: 55%;
   }
 }
 .page-main-visual .pmv-sp {
@@ -1438,26 +1449,19 @@ td {
 }
 
 /***** 備品販売ページ・トライアル申し込みページ *****/
-.sa-pi-title,
+.sp-title,
 .tp-title {
   background: linear-gradient(135deg, #6495ed, #40c3a3);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.sa-pi-title {
-  font-size: clamp(20px, 20px + (40 - 20) * (100vw - 300px) / (1440 - 300), 40px);
-}
-
-.tp-title {
   font-size: clamp(20px, 20px + (48 - 20) * (100vw - 300px) / (1440 - 300), 48px);
 }
 
-.sa-pi-text {
+.sp-text {
   color: rgba(0, 75, 100, 0.5);
   text-align: start;
-  font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (1440 - 300), 20px);
+  font-size: clamp(12px, 12px + (28 - 12) * (100vw - 300px) / (1440 - 300), 28px);
 }
 
 .tp-text {
@@ -1698,17 +1702,16 @@ td {
   background: linear-gradient(135deg, rgb(0, 55.875, 74.5), rgb(77.1531791908, 133.3757225434, 234.3468208092));
 }
 
-.gkl-ui-btn {
+.gkl-ui-btn,
+.sp-btn {
   font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (1440 - 300), 20px);
 }
 
-.gkf-btn,
-.sa-btn {
+.gkf-btn {
   font-size: clamp(16px, 16px + (24 - 16) * (100vw - 300px) / (1440 - 300), 24px);
 }
 @media (min-width: 768px) {
-  .gkf-btn a,
-  .sa-btn a {
+  .gkf-btn a {
     padding: 20px 30px;
   }
 }
@@ -3310,40 +3313,12 @@ td {
   }
 }
 
-.supplies-about {
+.supplies-point {
   margin-bottom: 50px;
 }
 @media (min-width: 1024px) {
-  .supplies-about {
-    padding: 100px 14vw;
+  .supplies-point {
     margin-bottom: 100px;
-  }
-}
-.supplies-about .sa-point {
-  padding: 10px 15px;
-}
-@media (min-width: 480px) {
-  .supplies-about .sa-point {
-    padding: 15px 20px;
-  }
-}
-@media (min-width: 768px) {
-  .supplies-about .sa-point {
-    padding: 20px 25px;
-  }
-}
-.supplies-about .sa-point .sa-point-inner {
-  gap: 10px;
-}
-@media (min-width: 480px) {
-  .supplies-about .sa-point .sa-point-inner {
-    padding: 20px;
-  }
-}
-@media (min-width: 768px) {
-  .supplies-about .sa-point .sa-point-inner {
-    gap: 15px;
-    padding: 25px;
   }
 }
 
@@ -3448,8 +3423,9 @@ td {
   }
 }
 .trial-terms .tt-box .tt-box-inner {
-  overflow-y: scroll;
   box-sizing: border-box;
+  overflow-y: scroll;
+  padding-right: 15px;
 }
 .trial-terms .tt-agree .checkbox-label {
   gap: 3px;
