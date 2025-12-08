@@ -642,6 +642,7 @@ td {
 }
 .page-h2 .page-h2-sub-add {
   text-align: start;
+  line-height: 1.5;
   font-size: clamp(12px, 12px + (28 - 12) * (100vw - 300px) / (1440 - 300), 28px);
 }
 @media (min-width: 768px) {
@@ -661,7 +662,7 @@ td {
 }
 
 .page-h2-ja {
-  font-size: clamp(24px, 24px + (48 - 24) * (100vw - 300px) / (1440 - 300), 48px);
+  font-size: clamp(24px, 24px + (64 - 24) * (100vw - 300px) / (1440 - 300), 64px);
 }
 
 .page-h2-add {
@@ -1279,7 +1280,7 @@ td {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: clamp(16px, 16px + (52 - 16) * (100vw - 300px) / (1440 - 300), 52px);
+  font-size: clamp(16px, 16px + (48 - 16) * (100vw - 300px) / (1440 - 300), 48px);
 }
 
 .gkl-ui-text {
@@ -1924,40 +1925,41 @@ td {
 }
 
 .all-footer {
-  padding: 0 7vw;
   text-align: center;
   font-weight: 700;
   /* 無料デモ */
   /* フッター情報 */
 }
 .all-footer .af-price-demo {
+  padding: 0 7vw 50px;
+}
+@media (min-width: 1024px) {
+  .all-footer .af-price-demo {
+    padding: 0 7vw 100px;
+  }
+}
+.all-footer .af-price-demo .afpd-frame {
   max-width: 320px;
-  margin-bottom: 50px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
 }
 @media (min-width: 480px) {
-  .all-footer .af-price-demo {
+  .all-footer .af-price-demo .afpd-frame {
     max-width: 430px;
   }
 }
 @media (min-width: 768px) {
-  .all-footer .af-price-demo {
+  .all-footer .af-price-demo .afpd-frame {
     max-width: 940px;
   }
 }
-@media (min-width: 1024px) {
-  .all-footer .af-price-demo {
-    margin-bottom: 100px;
-  }
-}
-.all-footer .af-price-demo .afpd-title {
+.all-footer .af-price-demo .afpd-frame .afpd-title {
   gap: 15px;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 @media (min-width: 768px) {
-  .all-footer .af-price-demo .afpd-title {
+  .all-footer .af-price-demo .afpd-frame .afpd-title {
     gap: 10px;
     flex-direction: row;
     justify-content: center;
@@ -1966,10 +1968,8 @@ td {
 .all-footer .af-info {
   gap: 30px;
   color: #ffffff;
-  width: 100vw;
   display: flex;
   background: #004b64;
-  margin-left: calc(50% - 50vw);
   padding-top: 50px;
   flex-direction: column;
 }
@@ -2362,7 +2362,12 @@ td {
 }
 @media (min-width: 768px) {
   .geo-karute-list .gkls-about {
-    padding: 0;
+    padding: 0 2vw;
+  }
+}
+@media (min-width: 1024px) {
+  .geo-karute-list .gkls-about {
+    padding: 0 7vw;
   }
 }
 .geo-karute-list .gkl-sales {
@@ -2398,11 +2403,15 @@ td {
 }
 .geo-karute-list .gkl-used {
   margin: 0 4vw;
-  max-width: 940px;
 }
 @media (min-width: 768px) {
   .geo-karute-list .gkl-used {
-    margin: 0 auto;
+    margin: 0 2vw;
+  }
+}
+@media (min-width: 1024px) {
+  .geo-karute-list .gkl-used {
+    margin: 0 7vw;
   }
 }
 
@@ -3396,7 +3405,7 @@ td {
 .trial-terms .tt-box {
   border: 1px solid #004b64;
   height: 200px;
-  padding: 10px;
+  padding: 10px 7px;
   overflow: hidden;
   background: #ffffff;
 }
