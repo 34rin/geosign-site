@@ -26,6 +26,19 @@
     <link rel="icon" href="favicon.ico" />
     <!-- CSS -->
     <link rel="stylesheet" href="assets/style/style.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PGC2XW5F6E"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-PGC2XW5F6E");
+    </script>
   </head>
   <body>
     <!-- headerを読み込む -->
@@ -45,7 +58,7 @@
       <div class="page-main-visual">
         <div class="pmv-title pmv-title-add">
           <h1>レンタル</h1>
-          <p class="pmv-title-sub-2 pmv-title-sub-add-2">
+          <p class="pmv-title-sub-4">
             1日からレンタル可能・急な故障でも即座対応
           </p>
           <p class="pmv-title-sub-1">
@@ -124,7 +137,7 @@
           // footer-includeに挿入
           document.getElementById("footer-include").innerHTML = html;
         })
-        .catch((err) => console.error("ヘッダー読み込み失敗", err));
+        .catch((err) => console.error("フッター読み込み失敗", err));
     </script>
   </body>
 </html>

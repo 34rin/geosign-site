@@ -26,6 +26,19 @@
     <link rel="icon" href="favicon.ico" />
     <!-- CSS -->
     <link rel="stylesheet" href="assets/style/style.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PGC2XW5F6E"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-PGC2XW5F6E");
+    </script>
   </head>
   <body>
     <!-- headerを読み込む -->
@@ -45,10 +58,8 @@
       <div class="page-main-visual">
         <div class="pmv-title">
           <h1>校正</h1>
-          <p class="pmv-title-sub-2 pmv-title-sub-add">
-            精度と信頼を維持するために
-          </p>
-          <p class="pmv-title-sub-2">
+          <p class="pmv-title-sub-2">精度と信頼を維持するために</p>
+          <p class="pmv-title-sub-3">
             精度維持のための年次校正と安心の修理・代替機対応
           </p>
         </div>
@@ -158,7 +169,7 @@
           // footer-includeに挿入
           document.getElementById("footer-include").innerHTML = html;
         })
-        .catch((err) => console.error("ヘッダー読み込み失敗", err));
+        .catch((err) => console.error("フッター読み込み失敗", err));
     </script>
   </body>
 </html>

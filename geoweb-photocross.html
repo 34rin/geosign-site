@@ -26,6 +26,19 @@
     <link rel="icon" href="favicon.ico" />
     <!-- CSS -->
     <link rel="stylesheet" href="assets/style/style.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PGC2XW5F6E"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-PGC2XW5F6E");
+    </script>
   </head>
   <body>
     <!-- headerを読み込む -->
@@ -213,36 +226,34 @@
         </div>
       </div>
 
-      <div class="base-content">
-        <div
-          class="content-box-frame content-box-frame-bl product-recommendation"
-        >
-          <div class="content-box-inner pr-content">
-            <div class="prc-title">
-              <div class="prct-icon">
-                <img src="assets/images/phone-icon.webp" alt="電話アイコン" />
-              </div>
-              <p class="prct-text">推奨端末</p>
-            </div>
-            <p class="prc-text-1">機種名：DuraForce EX</p>
-            <p class="prc-text-2">推奨Androidバージョン：8～13</p>
-            <div class="prc-text-3">
-              <p>※iOSは非対応です</p>
-              <p>
-                ※その他端末でも動作しますが一部動作しない場合がございます。
-                不安な方はお問合せフォームからご連絡ください。
-              </p>
-            </div>
-            <div class="btn prc-btn">
-              <a
-                href="https://supportbot-admin.userlocal.jp/pages/a18149b8a54802f6c8a20e1a5835d285/form"
-                >お問い合わせ</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- product-recommendationを読み込む -->
+      <div id="product-recommendation-include"></div>
+      <script>
+        // product-recommendation全体を読み込む
+        fetch("inc/product-recommendation.html")
+          .then((res) => res.text())
+          .then((html) => {
+            // product-recommendation-includeに挿入
+            document.getElementById(
+              "product-recommendation-include"
+            ).innerHTML = html;
+          })
+          .catch((err) => console.error("推奨端末読み込み失敗", err));
+      </script>
     </main>
+
+    <!-- price-demoを読み込む -->
+    <div id="price-demo-include"></div>
+    <script>
+      // price-demo全体を読み込む
+      fetch("inc/price-demo.html")
+        .then((res) => res.text())
+        .then((html) => {
+          // price-demo-includeに挿入
+          document.getElementById("price-demo-include").innerHTML = html;
+        })
+        .catch((err) => console.error("無料デモ読み込み失敗", err));
+    </script>
 
     <!-- footerを読み込む -->
     <div id="footer-include"></div>
@@ -254,7 +265,7 @@
           // footer-includeに挿入
           document.getElementById("footer-include").innerHTML = html;
         })
-        .catch((err) => console.error("ヘッダー読み込み失敗", err));
+        .catch((err) => console.error("フッター読み込み失敗", err));
     </script>
   </body>
 </html>
