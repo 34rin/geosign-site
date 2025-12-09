@@ -1722,7 +1722,7 @@ td {
 
 .gkl-ui-btn,
 .sp-btn {
-  font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (1440 - 300), 20px);
+  font-size: clamp(12px, 12px + (24 - 12) * (100vw - 300px) / (1440 - 300), 24px);
 }
 
 .gkf-btn {
