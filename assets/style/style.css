@@ -1531,20 +1531,15 @@ td {
   text-align: start;
   flex-direction: column;
 }
-@media (min-width: 768px) {
-  .ttb-text {
-    gap: 10px;
-  }
-}
 .ttb-text .ttbt-title {
-  font-size: clamp(14px, 14px + (24 - 14) * (100vw - 300px) / (1440 - 300), 24px);
+  font-size: clamp(12px, 12px + (16 - 12) * (100vw - 300px) / (1440 - 300), 16px);
 }
 .ttb-text .ttbt-sub-title {
-  font-size: clamp(12px, 12px + (20 - 12) * (100vw - 300px) / (1440 - 300), 20px);
+  font-size: clamp(10px, 10px + (14 - 10) * (100vw - 300px) / (1440 - 300), 14px);
 }
 .ttb-text .ttbt-text {
   font-weight: 400;
-  font-size: clamp(12px, 12px + (16 - 12) * (100vw - 300px) / (1440 - 300), 16px);
+  font-size: clamp(10px, 10px + (14 - 10) * (100vw - 300px) / (1440 - 300), 14px);
 }
 
 .label-text {
@@ -3384,15 +3379,10 @@ td {
 }
 .trial-terms .tt-box {
   border: 1px solid #004b64;
-  height: 200px;
+  height: 250px;
   padding: 10px 7px 10px 10px;
   overflow: hidden;
   background: #ffffff;
-}
-@media (min-width: 480px) {
-  .trial-terms .tt-box {
-    height: 250px;
-  }
 }
 @media (min-width: 768px) {
   .trial-terms .tt-box {
@@ -3407,11 +3397,6 @@ td {
   overflow-y: scroll;
   padding-right: 5px;
   flex-direction: column;
-}
-@media (min-width: 768px) {
-  .trial-terms .tt-box .tt-box-inner {
-    gap: 20px;
-  }
 }
 .trial-terms .tt-agree .checkbox-label {
   gap: 3px;
